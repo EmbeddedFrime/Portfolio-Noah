@@ -1,0 +1,45 @@
+:root{
+    --bgColor:#020818;
+    --secondColor:#071834;
+    --textColor:#fff;
+}
+body{
+    background-color: var(--bgColor);
+    margin: 0;
+    font-family: Poppins;
+}
+header{
+    color: var(--textColor);
+    padding: 0 2%;
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+}
+header .left{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+header .left p{
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 0;
+}
+.blue{
+    color: blue;
+}
+header .right{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 80%;
+}
+header .right a{
+    text-decoration: none;
+    color: var(--textColor);
+    margin-left: 15px;
+    font-size: 1.2rem;
+
+}
