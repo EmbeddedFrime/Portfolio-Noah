@@ -1,11 +1,10 @@
-# Pour recuperer le dossier d'un repositoryt git
+# Pour recuperer un repository git
 `git clone https://url.du.repogit.git`
-
-# Enregistrer son travail:
+# Pour enregistrer son travail:
 ### On ajoute les fichiers que l'on veux enregistrer
-pour ajouter seulement `index.html`
+pour ajouter seulement `index.html` :
 `git add index.html`
-Pour ajouter tout les fichiers modofiés
+Pour ajouter tout les fichiers modifiés:
 `git add .`
 
 ### On décrit les changements effectués
