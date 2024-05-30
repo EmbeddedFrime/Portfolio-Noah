@@ -150,10 +150,16 @@ window.addEventListener("load", (event) => {
 });
 window.addEventListener("scroll", (event) => {
     var scrollButton = document.getElementById('downArrow');
-    if(window.scrollY > 10){
-        scrollButton.style.display = "none";
-    }else{
+    console.log(window.scrollY);
+    if(window.scrollY > 50){
+        scrollButton.style.bottom = "-1000px";
+        sleep(900).then(() => {
+            scrollButton.style.display = "none";
+        });
+    }
+    else{
         scrollButton.style.display = "flex";
+        scrollButton.style.bottom = "40px";
     }
 });
 </script>

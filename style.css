@@ -50,6 +50,7 @@ header .right a{
 
 }
 .downArrow{
+    transition: 1s;
     fill: #fff;
     display: flex;
     justify-content: center;
