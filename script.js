@@ -3,10 +3,15 @@ function sleep(ms) {
 }
 window.addEventListener("load", (event) => {
     var nameDiv = document.getElementById('name');
-    var name = "Noah|"
+    var nameDiv2 = document.getElementById('surname');
+    var name = "Noah|";
+    var surname = "Perret|";
+    var j = 0;
     var i = 0;
     var text = "";
+    var text2 = "";
     var speed = 500;
+
     async function typeWriter() {
         if (i < name.length) {
             text += name.charAt(i);
@@ -19,7 +24,23 @@ window.addEventListener("load", (event) => {
             nameDiv.innerHTML = text;
             i--;
             await sleep(speed);
-            typeWriter();
+            typeWriterSurname();
+        }
+    }
+
+    async function typeWriterSurname() {
+        if (j < surname.length) {
+            text2 += surname.charAt(j);
+            nameDiv2.innerHTML = text2;
+            j++;
+            await sleep(speed);
+            typeWriterSurname();
+        } else {
+            text2 = text2.slice(0, -1);
+            nameDiv2.innerHTML = text2;
+            j--;
+            await sleep(speed);
+            typeWriterSurname();
         }
     }
     typeWriter();
