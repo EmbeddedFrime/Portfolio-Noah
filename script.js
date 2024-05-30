@@ -4,8 +4,8 @@ function sleep(ms) {
 window.addEventListener("load", (event) => {
     var nameDiv = document.getElementById('name');
     var nameDiv2 = document.getElementById('surname');
-    var name = "Noah|";
-    var surname = "Perret|";
+    var name = "Noah";
+    var surname = "Perret ";
     var j = 0;
     var i = 0;
     var text = "";
@@ -14,31 +14,28 @@ window.addEventListener("load", (event) => {
 
     async function typeWriter() {
         if (i < name.length) {
-            text += name.charAt(i);
+            text += name[i];
             nameDiv.innerHTML = text;
             i++;
             await sleep(speed);
             typeWriter();
         }else{
-            text = text.slice(0, -1);
-            nameDiv.innerHTML = text;
-            i--;
-            await sleep(speed);
             typeWriterSurname();
         }
     }
 
     async function typeWriterSurname() {
         if (j < surname.length) {
-            text2 += surname.charAt(j);
+            text2 += surname[j];
             nameDiv2.innerHTML = text2;
             j++;
+            console.log(text2);
             await sleep(speed);
             typeWriterSurname();
         } else {
-            text2 = text2.slice(0, -1);
-            nameDiv2.innerHTML = text2;
-            j--;
+            nameDiv2.innerHTML = "Perret|";
+            await sleep(speed);
+            nameDiv2.innerHTML = "Perret ";
             await sleep(speed);
             typeWriterSurname();
         }

@@ -97,6 +97,11 @@ header .right a{
     font-weight: 900;
     margin: 0;
 }
+.mainContent .left pre{
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0;
+}
 .mainContent .left p{
     font-size: 1.5rem;
     font-weight: 500;
