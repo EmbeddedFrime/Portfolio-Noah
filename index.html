@@ -23,7 +23,7 @@
     <div class="mainContent">
         <div class="left">
             <div class="leftText">
-                <h1>Noah</h1>
+                <h1 id="name">Noah</h1>
                 <h1>Perret</h1>
                 <div class="leftUnderText">
                     <div class="arrows">
@@ -116,3 +116,33 @@
     
 </body>
 </html>
+
+
+<script>
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+window.addEventListener("load", (event) => {
+    var nameDiv = document.getElementById('name');
+    var name = "Noah|"
+    var i = 0;
+    var text = "";
+    var speed = 500;
+    async function typeWriter() {
+        if (i < name.length) {
+            text += name.charAt(i);
+            nameDiv.innerHTML = text;
+            i++;
+            await sleep(speed);
+            typeWriter();
+        }else{
+            text = text.slice(0, -1);
+            nameDiv.innerHTML = text;
+            i--;
+            await sleep(speed);
+            typeWriter();
+        }
+    }
+    typeWriter();
+});
+</script>
