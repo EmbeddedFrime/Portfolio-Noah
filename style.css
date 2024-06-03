@@ -152,7 +152,7 @@ header .right a{
 .competencesContainer{
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -162,9 +162,10 @@ header .right a{
     align-items: center;
     justify-content: center;
     background-color: var(--secondColor);
-    width: 370px;
-    margin:20px;
-    padding: 20px;
+    width: 15%;
+    padding: 30px;
+    margin: 2%;
+    min-width: 250px;
 }
 .competencesCard .iconContainer{
     background-color: #002864;
@@ -186,6 +187,7 @@ header .right a{
     font-weight: 900;
     margin: 0;
     margin-top: 10px;
+    text-align: center;
 }
 .competencesCard p{
     font-size: 1rem;
