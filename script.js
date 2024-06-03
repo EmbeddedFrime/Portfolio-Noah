@@ -5,7 +5,7 @@ window.addEventListener("load", (event) => {
     var nameDiv = document.getElementById('name');
     var nameDiv2 = document.getElementById('surname');
     var name = "Noah";
-    var surname = "Perret ";
+    var surname = "Perret";
     var j = 0;
     var i = 0;
     var text = "";
@@ -55,4 +55,12 @@ window.addEventListener("scroll", (event) => {
         scrollButton.style.display = "flex";
         scrollButton.style.bottom = "40px";
     }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('downArrow').addEventListener('click', function() {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    });
 });
