@@ -56,6 +56,8 @@ window.addEventListener("scroll", (event) => {
         scrollButton.style.bottom = "40px";
     }
 });
+
+// scroll down arrow button
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('downArrow').addEventListener('click', function() {
         window.scrollBy({
