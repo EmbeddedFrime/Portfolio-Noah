@@ -1,7 +1,41 @@
+var competenceStatus="verifier";
+
+function changeCompetences(){
+    if (competenceStatus == "verifier"){
+        updateCompetences("concevoir");
+        competenceStatus = "concevoir";
+    }else{
+        updateCompetences("verifier");
+        competenceStatus = "verifier";
+    }
+}
+
+function updateCompetences(competence) {
+    fetch('assets/competences.json')
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        var mainDiv= document.getElementById('competencesContainer');
+        mainDiv.innerHTML = "";
+        for( var i = 0; i < data[competence].length; i++){
+            mainDiv.innerHTML+="<div class=\"competencesCard\"><div class=\"iconContainer\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V176h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H176V24zM160 128H352c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160V352H352V160z\"/></svg></div><h2 id=\"h"+i+"\">"+data[competence][i].nom+"</h2><p id=\"r"+i+"\" class=\"ressource\">"+ data[competence][i].ressource +"</p><div onclick=\"showCompetences("+i+")\" class=\"buttonSeeMore\">Voir plus</div></div>"
+        }
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+}
+
+function showCompetences(id){
+    console.log(id);
+}
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 window.addEventListener("load", (event) => {
+    updateCompetences("verifier");
     var nameDiv = document.getElementById('name');
     var nameDiv2 = document.getElementById('surname');
     var name = "Noah";
@@ -29,7 +63,6 @@ window.addEventListener("load", (event) => {
             text2 += surname[j];
             nameDiv2.innerHTML = text2;
             j++;
-            console.log(text2);
             await sleep(speed);
             typeWriterSurname();
         } else {
@@ -44,7 +77,6 @@ window.addEventListener("load", (event) => {
 });
 window.addEventListener("scroll", (event) => {
     var scrollButton = document.getElementById('downArrow');
-    console.log(window.scrollY);
     if(window.scrollY > 50){
         scrollButton.style.bottom = "-1000px";
         sleep(900).then(() => {

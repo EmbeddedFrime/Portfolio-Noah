@@ -1,0 +1,23 @@
+{
+    "verifier":[
+        {
+            "nom": "base du 1",
+            "ressource ": "201"
+        },
+        {
+            "nom": "base de l'electronique",
+            "ressource ": "201"
+        }
+    ],
+    "concevoir":[
+        {
+            "nom": "pas les bases de l'electronique",
+            "ressource ": "201"
+        },
+        {
+            "nom": "rfe pas base de l'electronique",
+            "ressource ": "201"
+        }
+
+    ]
+}

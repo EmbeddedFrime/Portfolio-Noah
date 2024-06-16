@@ -3,6 +3,10 @@
     --secondColor:#071834;
     --textColor:#fff;
 }
+html{
+    scroll-behavior: smooth;
+    font-family: Poppins;
+}
 body{
     background-color: var(--bgColor);
     margin: 0;
@@ -36,6 +40,9 @@ header .left p{
     width: 80%;
     background-color: #064CFF;
 }
+header .rightPhone{
+    display: none;
+}
 header .right{
     display: flex;
     align-items: center;
@@ -43,11 +50,16 @@ header .right{
     width: 80%;
 }
 header .right a{
+    transition: 0.5s;
     text-decoration: none;
     color: var(--textColor);
     margin-left: 15px;
     font-size: 1.2rem;
-
+}
+header .right a:hover{
+    font-size: 1.3rem;
+    transition: 0.5s;
+    color: #064CFF;
 }
 .downArrow{
     transition: 1s;
@@ -149,6 +161,78 @@ header .right a{
 .underMainContent h1{
     margin-left: 20px;    
 }
+
+/* Pour le bouton slider (je sais pas a quoi ça correspond) */
+.switch {
+right: 30px;
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+} 
+
+.headerCompetences{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .competencesContainer{
     width: 100%;
     display: flex;
@@ -164,7 +248,8 @@ header .right a{
     background-color: var(--secondColor);
     width: 15%;
     padding: 30px;
-    margin: 2%;
+    margin: 10px;
+    margin-bottom: 20px;
     min-width: 250px;
 }
 .competencesCard .iconContainer{
@@ -207,4 +292,59 @@ header .right a{
 .buttonSeeMore a{
     text-decoration: none;
     color: var(--textColor);
+}
+@media screen and (max-width: 800px){
+    header .right{
+        display: none;
+    }
+    header .rightPhone{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 80%;
+    }
+    header .rightPhone svg{
+        margin-right: 20px;
+        fill: #fff;
+        height: 40%;
+    }
+    .mainContent{
+        flex-direction: column-reverse;
+        justify-content: start;
+        height: 100vh;
+    }
+    .mainContent .center{
+        height: 2%;
+        width: 20%;
+    }
+    .mainContent .center .line{
+        height: 2px;
+        width: 100%;
+    }
+    .leftText h1{
+        text-align: center;
+    }
+    .leftText pre{
+        text-align: center;
+    }
+    .leftUnderText{
+        justify-content: center;
+    }
+    .leftUnderText .arrows{
+        display: none;
+    }
+    .competencesContainer{
+        justify-content: center;
+    }
+    .underMainContent {
+        align-items: center;
+    }
+    .underMainContent h1 {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
 }
