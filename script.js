@@ -1,5 +1,12 @@
 var competenceStatus="verifier";
 
+function closePopUp(){
+    var popUp = document.getElementById('popUp');
+    var bgBlur = document.getElementById('blurBg');
+    popUp.style.display = "none";
+    bgBlur.style.display = "none";
+}
+
 function changeCompetences(){
     if (competenceStatus == "verifier"){
         updateCompetences("concevoir");
@@ -29,7 +36,15 @@ function updateCompetences(competence) {
 }
 
 function showCompetences(id){
-    console.log(id);
+    var bgBlur = document.getElementById('blurBg');
+    var popUp = document.getElementById('popUp');
+    var titlePopUp = document.getElementById('popUpTitle');
+    var ressName = document.getElementById('RName');
+    var content = document.getElementById('description');
+    titlePopUp.innerText = document.getElementById('h'+id).innerText;
+    ressName.innerText = document.getElementById('r'+id).innerText;
+    bgBlur.style.display = "flex";
+    popUp.style.display = "flex";
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
