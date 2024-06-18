@@ -251,6 +251,7 @@ border-radius: 50%;
     margin: 10px;
     margin-bottom: 20px;
     min-width: 250px;
+    border-radius: 5%;
 }
 .competencesCard .iconContainer{
     background-color: #002864;
