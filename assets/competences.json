@@ -2,49 +2,49 @@
     "verifier":[
         {
             "nom": "Analyse fonctionnelle d’un système",
-            "ressource ": "C1-N1-AC1"
+            "ressource": "C1-N1-AC1"
         },
         {
             "nom": "Réalisation de A à Z d’un circuit imprimer",
-            "ressource ": "C1-N1-AC2"
+            "ressource": "C1-N1-AC2"
         },
         {
             "nom": "Ecrire le programme décrivant une machine à états",
-            "ressource ": "C1-N1-AC2"
+            "ressource": "C1-N1-AC2"
         },
         {
             "nom": "Rédiger un dossier de fabrication d’une carte électronique",
-            "ressource ": "C1-N1-AC3"
+            "ressource": "C1-N1-AC3"
         },
         {
             "nom": "Rédiger une fiche expliquant le fonctionnement de l’algorithme",
-            "ressource ": "C1-N1-AC3"
+            "ressource": "C1-N1-AC3"
         }
     ],
     "concevoir":[
         {
             "nom": "tester une carte électronique",
-            "ressource ": "C2-N1-AC1"
+            "ressource": "C2-N1-AC1"
         },
         {
             "nom": "Tests du programme par simulation externe",
-            "ressource ": "C2-N1-AC1"
+            "ressource": "C2-N1-AC1"
         },
         {
             "nom": "Identifier un dysfonctionement sur un circuit",
-            "ressource ": "C2-N1-AC2"
+            "ressource": "C2-N1-AC2"
         },
         {
             "nom": "Identifier un dysfonctionement sur un programme",
-            "ressource ": "C2-N1-AC2"
+            "ressource": "C2-N1-AC2"
         },
         {
             "nom": "Décrire les effets d'un dysfonctionnement sur un circuit",
-            "ressource ": "C2-N1-AC3"
+            "ressource": "C2-N1-AC3"
         },
         {
             "nom": "Décrire les effets d'un dysfonctionnement sur un programme",
-            "ressource ": "C2-N1-AC3"
+            "ressource": "C2-N1-AC3"
         }
 
 
