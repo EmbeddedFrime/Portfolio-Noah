@@ -69,6 +69,17 @@ body{
     flex-direction: column;
     align-items: center;
 }
+.compPopUp #popUpTitle{
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0;
+}
+.compPopUp h2{
+    color: #9c9c9c;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 0;
+}
 .closePopUp{
     color: #ff2323ee;
     display: flex;
