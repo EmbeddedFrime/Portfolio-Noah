@@ -5,6 +5,9 @@ function closePopUp(){
     var bgBlur = document.getElementById('blurBg');
     popUp.style.display = "none";
     bgBlur.style.display = "none";
+
+    // Permettre à nouveau le défilement
+    document.body.style.overflow = 'auto';
 }
 
 function changeCompetences(){
@@ -45,7 +48,11 @@ function showCompetences(id){
     ressName.innerText = document.getElementById('r'+id).innerText;
     bgBlur.style.display = "flex";
     popUp.style.display = "flex";
+
+    // Empêcher le défilement
+    document.body.style.overflow = 'hidden';
 }
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
