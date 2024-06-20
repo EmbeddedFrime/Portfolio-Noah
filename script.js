@@ -1,5 +1,10 @@
 var competenceStatus="verifier";
 
+function afficherImageAgauche(imgLink){
+    var img = document.getElementById('imgR');
+    img.src = "assets/imgs/more"+imgLink;
+}
+
 function closePopUp(){
     var popUp = document.getElementById('popUp');
     var bgBlur = document.getElementById('blurBg');
