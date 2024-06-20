@@ -46,13 +46,7 @@ function showCompetences(id){
     var content = document.getElementById('description');
     var img = document.getElementById('imgR');
     type= competenceStatus=="verifier"?"V":"C";
-    try{
-        img.src="assets/imgs/"+type+id+".png";
-    }catch (e){
-        alert("aucune image n'est assignée à cette compétence");
-        img.src="assets/imgs/default.png";
-    }
-    
+    img.src="assets/imgs/"+type+id+".png";
     titlePopUp.innerText = document.getElementById('h'+id).innerText;
     ressName.innerText = document.getElementById('r'+id).innerText;
     bgBlur.style.display = "flex";
