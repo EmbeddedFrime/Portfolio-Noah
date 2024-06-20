@@ -2,7 +2,7 @@ var competenceStatus="verifier";
 
 function afficherImageAgauche(imgLink){
     var img = document.getElementById('imgR');
-    img.src = "assets/imgs/more"+imgLink;
+    img.src = "assets/imgs/more/"+imgLink+".png";
 }
 
 function closePopUp(){
@@ -54,7 +54,7 @@ function showCompetences(id){
     img.src="assets/imgs/"+type+id+".png";
     titlePopUp.innerText = document.getElementById('h'+id).innerText;
     ressName.innerText = document.getElementById('r'+id).innerText;
-    texte.innerText = document.getElementById('d'+id).innerText;
+    texte.innerHTML = document.getElementById('d'+id).innerHTML;
     bgBlur.style.display = "flex";
     popUp.style.display = "flex";
 

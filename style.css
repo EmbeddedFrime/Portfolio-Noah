@@ -6,12 +6,14 @@
 html{
     scroll-behavior: smooth;
     font-family: Poppins;
+
 }
 body{
     background-color: var(--bgColor);
     margin: 0;
     font-family: Poppins;
     color: var(--textColor);
+
 }
 #blurBg{
     position: fixed;
@@ -53,6 +55,11 @@ body{
     width: 40%;
     height: 100%;
     border-radius: 10px 0 0 10px;
+}
+.compPopUp .chgImg{
+    color: #064CFF;
+    text-decoration: underline;
+    cursor: pointer;
 }
 .compPopUp .right{
     width: auto;
