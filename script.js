@@ -44,6 +44,9 @@ function showCompetences(id){
     var titlePopUp = document.getElementById('popUpTitle');
     var ressName = document.getElementById('RName');
     var content = document.getElementById('description');
+    var img = document.getElementById('imgR');
+    type= competenceStatus=="verifier"?"V":"C";
+    img.src="assets/imgs/"+type+id+".png";
     titlePopUp.innerText = document.getElementById('h'+id).innerText;
     ressName.innerText = document.getElementById('r'+id).innerText;
     bgBlur.style.display = "flex";
