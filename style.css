@@ -42,7 +42,7 @@ body{
 .compPopUp{
     display: flex;
     width: 85%;
-    height: 85%;
+    height: 85%; /* 80 % à la base*/
     background-color: var(--secondColor);
     border-radius: 10px;
     flex-direction: row;
