@@ -115,6 +115,9 @@ window.addEventListener("scroll", (event) => {
         scrollButton.style.display = "flex";
         scrollButton.style.bottom = "40px";
     }
+    if(scrollButton.style.bottom == "-1000px"){
+        scrollButton.style.display = "none";
+    }
 });
 
 // scroll down arrow button
