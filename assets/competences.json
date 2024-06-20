@@ -3,13 +3,14 @@
         {
             "nom": "Analyse fonctionnelle d’un système",
             "ressource": "C1-N1-AC1"
+            
         },
         {
             "nom": "Réalisation de A à Z d’un circuit imprimer",
             "ressource": "C1-N1-AC2"
         },
         {
-            "nom": "Ecrire le programme décrivant une machine à états",
+            "nom": "Ecrire un programme décrivant une machine à états",
             "ressource": "C1-N1-AC2"
         },
         {
@@ -31,11 +32,11 @@
             "ressource": "C2-N1-AC1"
         },
         {
-            "nom": "Identifier un dysfonctionement sur un circuit",
+            "nom": "Identifier un dysfonctionement dans un circuit",
             "ressource": "C2-N1-AC2"
         },
         {
-            "nom": "Identifier un dysfonctionement sur un programme",
+            "nom": "Identifier un dysfonctionement dans un programme",
             "ressource": "C2-N1-AC2"
         },
         {
