@@ -49,22 +49,15 @@ body{
     align-items: center;
     justify-content: center;
 }
-.compPopUp .left{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-}
-.compPopUp .left img{
-    max-width: 100%;
+.compPopUp img{
+    width: 40%;
     height: 100%;
     border-radius: 10px 0 0 10px;
 }
 .compPopUp .right{
-    text-align: center;
-    min-width: 50%;
+    width: auto;
+    text-align: justify;
+    width: 60%;
     padding: 20px;
     height: 100%;
     display: flex;
@@ -87,6 +80,10 @@ body{
     font-weight: 500;
     margin: 0;
     color: #fff;
+}
+.compPopUp #description{
+    overflow: scroll;
+    margin-bottom: 10px;
 }
 .closePopUp{
     color: #ff2323ee;
@@ -312,6 +309,7 @@ border-radius: 50%;
 } 
 
 .headerCompetences{
+    align-items: center;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -380,6 +378,13 @@ border-radius: 50%;
     color: var(--textColor);
 }
 @media screen and (max-width: 800px){
+    .compPopUp #imgR{
+        display: none;
+    }
+    .compPopUp .right{
+        width: 100%;
+        text-align: center;
+    }
     header .right{
         display: none;
     }
