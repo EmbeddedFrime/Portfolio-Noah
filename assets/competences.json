@@ -19,6 +19,7 @@
         {
             "nom": "Rédiger un dossier de fabrication d’une carte électronique",
             "ressource": "C1-N1-AC3"
+            
         },
         {
             "nom": "Rédiger une fiche expliquant le fonctionnement de l’algorithme",
@@ -36,11 +37,16 @@
         },
         {
             "nom": "Identifier un dysfonctionement dans un circuit",
-            "ressource": "C2-N1-AC2"
+            "ressource": "C2-N1-AC2",
+            "texte": "Comme vu dans la partie conception du portfolio, il m'arrive régulièrement de créer des cartes électroniques. Il est important de veiller à leur bon fonctionnement avant et pendant leur première utilisation. <br>Pour cela, la première chose à faire est de vérifier les niveaux de tension à l'entrée de la carte ainsi qu'au niveau des composants les plus sensibles, notamment les microcontrôleurs. De plus, en cas de défaut sur la carte (par exemple un problème de connexion), la première chose à vérifier est l'absence de court-circuit. Il est également nécessaire de vérifier la qualité des soudures : il peut arriver qu'il n'y ait pas assez d'étain, ou au contraire qu'il y en ait trop, créant ainsi un court-circuit. Pour identifier tous ces types d’erreurs, il est nécessaire de vérifier à l’aide d’un multimètre les pins des composants <span class=\"chgImg\" onclick=\"afficherImageAgauche('C2_photo1')\">(Photo 1)</span>.<br>Également, durant l’utilisation des PCB, il arrive régulièrement d’avoir besoin d’effectuer différents relevés sur les points de test. Cela s'est produit lors de la conception de mon projet de robots, où je m'occupais de la partie détection de balise infrarouge. Grâce aux points de test, j'ai pu relever le signal reçu par le récepteur infrarouge de la carte <span class=\"chgImg\" onclick=\"afficherImageAgauche('C2_photo2')\">(Photo 2)</span>.<br>Enfin, toujours dans le cadre de ce projet, une fois le signal de la balise décodé, j'avais pour tâche d'envoyer un signal à la partie principale du robot pour l'informer de cette détection <span class=\"chgImg\" onclick=\"afficherImageAgauche('C2_photo3')\">(Photo 3)</span>, permettant ainsi d'identifier tout dysfonctionnement potentiel."
+              
         },
         {
             "nom": "Identifier un dysfonctionement dans un programme",
-            "ressource": "C2-N1-AC2"
+            "ressource": "C2-N1-AC2",
+            "texte": "Pendant des travaux pratiques en informatique, j'ai développé des compétences essentielles en tests et validation. J'ai perfectionné mes capacités à détecter les erreurs de syntaxe, à contrôler les initialisations des variables ainsi qu'à gérer les conditions des boucles en utilisant des fiches de test dédiées. Ces compétences m'ont permis de poser des bases solides, notamment dans le langage C, en mettant un accent particulier sur la vérification de celui-ci.<br><br>En ce qui concerne la vérification des erreurs de syntaxe, on peut se servir de fiche de test afin de directement voir la différence entre la fonctionnalité voulue et le résultat obtenu <span class=\"chgImg\" onclick=\"afficherImageAgauche('C3_photo1')\">(Photo 1)</span>. Une fois l’erreur trouvée et analysée on peut facilement la résoudre <span class=\"chgImg\" onclick=\"afficherImageAgauche('C3_photo2')\">(Photo 2)</span> ici, en langage C le programme commence toujours par compter par 0 il faut donc initialiser I à 1.<br><br>En outre, d’un point de vue initialisation des variables on peut également se servir de fiche de test. Dans le même programme, durant la partie acquisition de caractère, 2 fiches de tests ont été utilisés (<span class=\"chgImg\" onclick=\"afficherImageAgauche('C3_photo3')\">(Photo 3)</span> et <span class=\"chgImg\" onclick=\"afficherImageAgauche('C3_photo4')\">(Photo 4)</span>). Les 2 montraient un défaut de l’acquisition contrôlée qui a été résolu par la suite <span class=\"chgImg\" onclick=\"afficherImageAgauche('C3_photo5')\">(Photo 5)</span>, on fixe la limite à 80 caractères et on supprime les conditions du while ce qui permet au programme de s’arrêter lorsque l’utilisateur dépasse 50 caractères ou marque un ‘.’."
+
+                            
         },
         {
             "nom": "Décrire les effets d'un dysfonctionnement sur un circuit",
