@@ -28,7 +28,8 @@
     "concevoir":[
         {
             "nom": "tester une carte électronique",
-            "ressource": "C2-N1-AC1"
+            "ressource": "C2-N1-AC1",
+            "texte":"apagnan"
         },
         {
             "nom": "Tests du programme par simulation externe",
