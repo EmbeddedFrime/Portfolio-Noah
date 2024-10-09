@@ -1,3 +1,4 @@
+/* Fonction ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 var competenceStatus="verifier";
 
 function afficherImageAgauche(imgLink){
@@ -65,6 +66,8 @@ function showCompetences(id){
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+/*Evenement ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 window.addEventListener("load", (event) => {
     updateCompetences("verifier");
     var nameDiv = document.getElementById('name');
@@ -106,6 +109,7 @@ window.addEventListener("load", (event) => {
     }
     typeWriter();
 });
+
 window.addEventListener("scroll", (event) => {
     var scrollButton = document.getElementById('downArrow');
     if(window.scrollY > 50){
@@ -128,4 +132,11 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
+});
+
+//détection appuis sur echap pour fermer la popUp
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' || event.key === 'Esc') {
+        closePopUp();
+    }
 });
