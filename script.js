@@ -67,8 +67,8 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/*Evenement ------------------------------------------------------------------------------------------------------------------------------------------------------*/
-window.addEventListener("load", (event) => {
+/*PERRET Noah Sparkiz3---------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*window.addEventListener("load", (event) => {
     updateCompetences("verifier");
     var nameDiv = document.getElementById('name');
     var nameDiv2 = document.getElementById('surname');
@@ -108,7 +108,54 @@ window.addEventListener("load", (event) => {
         }
     }
     typeWriter();
+}); */
+
+window.addEventListener("load", (event) => {
+    updateCompetences("verifier");
+    var nameDiv = document.getElementById('name');
+    var nameDiv2 = document.getElementById('surname');
+    var name = "Noah";
+    var surname = "Perret";
+    var j = 0;
+    var i = 0;
+    var text = "";
+    var text2 = "";
+    var speed = 300;
+    var cursor = "|";
+
+    async function typeWriter() {
+        if (i < name.length) {
+            text = name.slice(0, i + 1); // Get the substring up to the current letter
+            nameDiv.innerHTML = text + cursor; // Show the cursor while typing
+            i++;
+            await sleep(speed);
+            typeWriter(); // Continue typing the next letter
+        } else {
+            nameDiv.innerHTML = name; // Remove the cursor after "Noah" is fully typed
+            await sleep(speed);
+            typeWriterSurname(); // Move to typing the surname
+        }
+    }
+
+    async function typeWriterSurname() {
+        if (j < surname.length) {
+            text2 = surname.slice(0, j + 1); // Get the substring for the surname
+            nameDiv2.innerHTML = text2 + cursor; // Show the cursor while typing
+            j++;
+            await sleep(speed);
+            typeWriterSurname(); // Continue typing the next letter
+        } else {
+            nameDiv2.innerHTML = "Perret" + cursor; // Blinking cursor after the full surname
+            await sleep(speed);
+            nameDiv2.innerHTML = "Perret "; // Remove cursor momentarily
+            await sleep(speed);
+            typeWriterSurname(); // Keep the cursor blinking after finishing the surname
+        }
+    }
+
+    typeWriter();
 });
+
 
 window.addEventListener("scroll", (event) => {
     var scrollButton = document.getElementById('downArrow');
