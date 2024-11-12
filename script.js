@@ -120,8 +120,10 @@ window.addEventListener("load", (event) => {
     var i = 0;
     var text = "";
     var text2 = "";
-    var speed = 300;
-    var cursor = "|";
+    var speed = 250;
+    var speedCursor = 500;
+    var cursor = '<span class="cursor">│</span>'; // Curseur dans un span
+    //var cursor = "│";
 
     async function typeWriter() {
         if (i < name.length) {
@@ -146,9 +148,9 @@ window.addEventListener("load", (event) => {
             typeWriterSurname(); // Continue typing the next letter
         } else {
             nameDiv2.innerHTML = "Perret" + cursor; // Blinking cursor after the full surname
-            await sleep(speed);
+            await sleep(speedCursor);
             nameDiv2.innerHTML = "Perret "; // Remove cursor momentarily
-            await sleep(speed);
+            await sleep(speedCursor);
             typeWriterSurname(); // Keep the cursor blinking after finishing the surname
         }
     }
