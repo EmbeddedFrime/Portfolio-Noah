@@ -2,8 +2,8 @@
     "verifier":[
         {
             "nom": "Analyse fonctionnelle d’un système",
-            "ressource": "C1-N1-AC1"
-            
+            "ressource": "C1-N1-AC1",
+            "texte":"Dans le cadre de mon premier projet à Polytech, j'ai participé à l'analyse fonctionnelle d'un dé électronique <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo1')\">(Photo 1)</span>. <br> Nous avons d'abord créé un tableau répertoriant les fonctionnalités du produit, en quantifiant chaque spécification et en déterminant les tests à réaliser pour valider les spécifications <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo2')\">(Photo 2)</span>. <br> Ensuite, nous avons réalisé la décomposition fonctionnelle global du système <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo3')\">(Photo 3)</span>. J’ai par la suite créé un chronogramme pour expliquer simplement le système <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo4')\">(Photo 4)</span>. <br> Lorsque le contact est activé, la validation du comptage s’effectue pendant environ 2 secondes. Le nombre aléatoire s'incrémente de 1 à chaque front montant de l’horloge, il revient à 1 après avoir atteint 6. Grâce à une horloge rapide, oscillant entre 10 Hz et 20 Hz, et à la durée de validation de ±2 secondes, nous générons un chiffre pseudo-aléatoire."
         },
         {
             "nom": "Réalisation de A à Z d’un circuit imprimer",
@@ -13,12 +13,13 @@
         {
             "nom": "Ecrire un programme décrivant une machine à états",
             "ressource": "C1-N1-AC2",
-            "texte":"Durant un TP d'informatique, j'ai utilisé une machine à états pour gérer la navigation entre différents menus d'une interface utilisateur.<br> Ce TP a été réalisé avec une carte SAMD21 fournie et un écran OLED.<br> En utilisant l'environnement de développement Segger et le langage C++, j’ai confectionné un code permettant de reproduire la machine à états <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo1')\">(Photo 1)</span>.<br>Cette machine à états permet de naviguer entre différents états (ou menus) de l'interface utilisateur et de modifier la valeur d'une variable de deux manières différentes.<br> Enfin, les changements s’actualisaient sur l’écran OLED en fonction des appuis sur les différents boutons poussoirs <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo2')\">(Photo 2)</span>.<br> En outre, dans un TP mais cette fois-ci d’automatisme, un programme permettant la fonction antirebond sur les boutons poussoirs d’une carte a été réalisé <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo3')\">(Photo 3)</span>.<br> Pour cela, le logiciel Xilinx ISE a été utilisé afin de créer le programme en VHDL qui permet de filtrer les transitions rapides et instables du bouton (btnin) et en ne produisant une sortie stable (btnout) que lorsque le bouton est pressé de manière stable.<br> Le programme a été développé en se basant sur la machine à états suivante <span class=\"chgImg\" onclick=\"afficherImageAgauche('V0_photo4')\">(Photo 4)</span>."
+            "texte":"Durant un TP d'informatique, j'ai utilisé une machine à états pour gérer la navigation entre différents menus d'une interface utilisateur.<br> Ce TP a été réalisé avec une carte SAMD21 fournie et un écran OLED.<br> En utilisant l'environnement de développement Segger et le langage C++, j’ai confectionné un code permettant de reproduire la machine à états <span class=\"chgImg\" onclick=\"afficherImageAgauche('V2_photo1')\">(Photo 1)</span>.<br>Cette machine à états permet de naviguer entre différents états (ou menus) de l'interface utilisateur et de modifier la valeur d'une variable de deux manières différentes.<br> Enfin, les changements s’actualisaient sur l’écran OLED en fonction des appuis sur les différents boutons poussoirs <span class=\"chgImg\" onclick=\"afficherImageAgauche('V2_photo2')\">(Photo 2)</span>.<br> En outre, dans un TP mais cette fois-ci d’automatisme, un programme permettant la fonction antirebond sur les boutons poussoirs d’une carte a été réalisé <span class=\"chgImg\" onclick=\"afficherImageAgauche('V2_photo3')\">(Photo 3)</span>.<br> Pour cela, le logiciel Xilinx ISE a été utilisé afin de créer le programme en VHDL qui permet de filtrer les transitions rapides et instables du bouton (btnin) et en ne produisant une sortie stable (btnout) que lorsque le bouton est pressé de manière stable.<br> Le programme a été développé en se basant sur la machine à états suivante <span class=\"chgImg\" onclick=\"afficherImageAgauche('V2_photo4')\">(Photo 4)</span>."
 
         },
         {
             "nom": "Rédiger un dossier de fabrication d’une carte électronique",
-            "ressource": "C1-N1-AC3"
+            "ressource": "C1-N1-AC3",
+            "texte":"à compléter"
             
         },
         {
@@ -28,9 +29,9 @@
     ],
     "concevoir":[
         {
-            "nom": "tester une carte électronique",
+            "nom": "Tester une carte électronique",
             "ressource": "C2-N1-AC1",
-            "texte":"apagnan"
+            "texte":"à compléter"
         },
         {
             "nom": "Tests du programme par simulation externe",
