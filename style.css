@@ -207,7 +207,7 @@ header .right a:hover{
 }
 .cursor {
     position: relative;
-    left: -15px; /* Déplace seulement l'élément */
+    left: -15px; /* Déplace seulement le cursor */
 }
 .mainContent .left p{
     font-size: 1.5rem;
@@ -365,7 +365,7 @@ border-radius: 50%;
     fill: #fff;
 }
 .competencesCard h2{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 900;
     margin: 0;
     margin-top: 10px;
