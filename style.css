@@ -71,6 +71,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 15px;
 }
 .compPopUp #popUpTitle{
     font-size: 1.5rem;
@@ -94,6 +95,9 @@ body{
     overflow: scroll;
     margin-bottom: 10px;
     padding-right: 15px; /*repare la barre de defillement */
+    width: calc(100% + 15px); /*repare la barre de defillement */
+    position : relative;  /*pastrès utile */
+    left : 0;
 }
  /* Styles spécifiques à WebKit pour masquer la barre de défilement sur les navigateurs chromium*/
 @media screen and (-webkit-min-device-pixel-ratio:0) {

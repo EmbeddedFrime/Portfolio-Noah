@@ -114,14 +114,14 @@ window.addEventListener("load", (event) => {
     updateCompetences("verifier");
     var nameDiv = document.getElementById('name');
     var nameDiv2 = document.getElementById('surname');
-    var name = "Perret";
+    var name = "Noah";
     var surname = "Perret";
     var j = 0;
     var i = 0;
     var text = "";
     var text2 = "";
     var speed = 250;
-    var speedCursor = 5000000;
+    var speedCursor = 500;
     var cursor = '<span class="cursor">│</span>'; // Curseur dans un span
 
     async function typeWriter() {
