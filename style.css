@@ -93,7 +93,14 @@ body{
 .compPopUp #description{
     overflow: scroll;
     margin-bottom: 10px;
- }
+    padding-right: 15px; /*repare la barre de defillement */
+}
+ /* Styles spécifiques à WebKit pour masquer la barre de défilement sur les navigateurs chromium*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .compPopUp #description::-webkit-scrollbar {
+        display: none; /* Masquer la barre de défilement */
+    }
+}
 .closePopUp{
     color: #ff2323ee;
     display: flex;

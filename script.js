@@ -109,19 +109,19 @@ function sleep(ms) {
     }
     typeWriter();
 }); */
-
+// gère l'affichage de PERRET Noah
 window.addEventListener("load", (event) => {
     updateCompetences("verifier");
     var nameDiv = document.getElementById('name');
     var nameDiv2 = document.getElementById('surname');
-    var name = "Noah";
+    var name = "Perret";
     var surname = "Perret";
     var j = 0;
     var i = 0;
     var text = "";
     var text2 = "";
     var speed = 250;
-    var speedCursor = 500;
+    var speedCursor = 5000000;
     var cursor = '<span class="cursor">│</span>'; // Curseur dans un span
 
     async function typeWriter() {
@@ -157,7 +157,7 @@ window.addEventListener("load", (event) => {
     typeWriter();
 });
 
-
+//descend la fleche quand on scroll
 window.addEventListener("scroll", (event) => {
     var scrollButton = document.getElementById('downArrow');
     if(window.scrollY > 50){
@@ -187,4 +187,13 @@ window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' || event.key === 'Esc') {
         closePopUp();
     }
+});
+
+//affichage de l'image en pleine écran lorsqu'on clique dessus
+document.addEventListener('DOMContentLoaded', function() {
+    var img = document.getElementById('imgR');
+    img.addEventListener('click', function() {
+        var imgSrc = img.src;
+        window.open(imgSrc, '_blank');
+    });
 });
