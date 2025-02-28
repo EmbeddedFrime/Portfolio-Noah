@@ -35,7 +35,8 @@ function updateCompetences(competence) {
         var mainDiv= document.getElementById('competencesContainer');
         mainDiv.innerHTML = "";
         for( var i = 0; i < data[competence].length; i++){
-            mainDiv.innerHTML+="<div class=\"competencesCard\"><div class=\"iconContainer\">"+data[competence][i].svg+"</div><h2 id=\"h"+i+"\">"+data[competence][i].nom+"</h2><p style=\"display:none;\" id=\"d"+i+"\">"+data[competence][i].texte +"</p><p id=\"r"+i+"\" class=\"ressource\">"+ data[competence][i].ressource +"</p><div onclick=\"showCompetences("+i+")\" class=\"buttonSeeMore\">Voir plus</div></div>"
+            let illustrationContainer =  data[competence][i].svg ? "<div class=\"iconContainer\">"+data[competence][i].svg+"</div>" : "<div class=\"imgContainer\"><img src=\""+data[competence][i].img+"\"></div>";
+            mainDiv.innerHTML+="<div class=\"competencesCard\">"+ illustrationContainer +"<h2 id=\"h"+i+"\">"+data[competence][i].nom+"</h2><p style=\"display:none;\" id=\"d"+i+"\">"+data[competence][i].texte +"</p><p id=\"r"+i+"\" class=\"ressource\">"+ data[competence][i].ressource +"</p><div onclick=\"showCompetences("+i+")\" class=\"buttonSeeMore\">Voir plus</div></div>"
         }
     })
     .catch(error => {

@@ -376,6 +376,19 @@ border-radius: 50%;
     width: 50px;
     fill: #fff;
 }
+.competencesCard .imgContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.competencesCard .imgContainer img{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
 .competencesCard h2{
     font-size: 1.3rem;
     font-weight: 900;
