@@ -1,9 +1,23 @@
 /* Fonction ------------------------------------------------------------------------------------------------------------------------------------------------------*/
-var competenceStatus="verifier";
 
+var competenceStatus="verifier";
+setPersonalProjects();
 function afficherImageAgauche(imgLink){
     var img = document.getElementById('imgR');
     img.src = "assets/imgs/more/"+imgLink+".png";
+}
+
+async function getJSONFile(file) {
+    try {
+        const response = await fetch(`assets/json/${file}.json`);
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+        return await response.json(); // Retourne les données
+    } catch (error) {
+        console.error('Erreur lors du chargement du JSON:', error);
+        return null; // Pour éviter les erreurs si le JSON ne se charge pas
+    }
 }
 
 function closePopUp(){
@@ -26,23 +40,52 @@ function changeCompetences(){
     }
 }
 
-function updateCompetences(competence) {
-    fetch('assets/competences.json')
-    .then(response => {
-        return response.json();
-    })
-    .then(data => {
-        var mainDiv= document.getElementById('competencesContainer');
-        mainDiv.innerHTML = "";
-        for( var i = 0; i < data[competence].length; i++){
-            let illustrationContainer =  data[competence][i].svg ? "<div class=\"iconContainer\">"+data[competence][i].svg+"</div>" : "<div class=\"imgContainer\"><img src=\""+data[competence][i].img+"\"></div>";
-            mainDiv.innerHTML+="<div class=\"competencesCard\">"+ illustrationContainer +"<h2 id=\"h"+i+"\">"+data[competence][i].nom+"</h2><p style=\"display:none;\" id=\"d"+i+"\">"+data[competence][i].texte +"</p><p id=\"r"+i+"\" class=\"ressource\">"+ data[competence][i].ressource +"</p><div onclick=\"showCompetences("+i+")\" class=\"buttonSeeMore\">Voir plus</div></div>"
-        }
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
+async function updateCompetences(competence) {
+    var data = await getJSONFile('competences'); // Attendre que les données soient chargées
 
+    var mainDiv = document.getElementById('competencesContainer');
+    mainDiv.innerHTML = "";
+
+    for (var i = 0; i < data[competence].length; i++) {
+        let illustrationContainer = data[competence][i].svg 
+            ? `<div class="iconContainer">${data[competence][i].svg}</div>` 
+            : `<div class="imgContainer"><img src="${data[competence][i].img}"></div>`;
+
+        mainDiv.innerHTML += `
+            <div class="competencesCard">
+                ${illustrationContainer}
+                <h2 id="h${i}">${data[competence][i].nom}</h2>
+                <p style="display:none;" id="d${i}">${data[competence][i].texte}</p>
+                <p id="r${i}" class="ressource">${data[competence][i].ressource}</p>
+                <div onclick="showCompetences(${i})" class="buttonSeeMore">Voir plus</div>
+            </div>
+        `;
+    }
+}
+
+async function setPersonalProjects(){
+    var data = await getJSONFile('projetsPerso'); // Attendre que les données soient chargées
+
+    data = data['projetsPerso'];
+    console.log(data);
+    var mainDiv = document.getElementById('ProjetPersoContainer');
+    mainDiv.innerHTML = "";
+
+    for (var i = 0; i < data.length; i++) {
+        let illustrationContainer = data[i].svg 
+            ? `<div class="iconContainer">${data[i].svg}</div>` 
+            : `<div class="imgContainer"><img src="${data[i].img}"></div>`;
+
+        mainDiv.innerHTML += `
+            <div class="competencesCard">
+                ${illustrationContainer}
+                <h2 id="h${i}">${data[i].nom}</h2>
+                <p style="display:none;" id="d${i}">${data[i].texte}</p>
+                <p id="r${i}" class="ressource">${data[i].ressource}</p>
+                <div onclick="showCompetences(${i})" class="buttonSeeMore">Voir plus</div>
+            </div>
+        `;
+    }
 }
 
 function showCompetences(id){
