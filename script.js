@@ -63,6 +63,8 @@ async function updateCompetences(competence) {
     }
 }
 
+
+//can be merged with updateCompetences
 async function setPersonalProjects(){
     var data = await getJSONFile('projetsPerso'); // Attendre que les données soient chargées
 
