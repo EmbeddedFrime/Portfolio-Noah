@@ -216,10 +216,13 @@ header .right a:hover{
     font-size: 5rem;
     font-weight: 900;
     margin: 0;
+    line-height: 1;
 }
 .cursor {
     position: relative;
     left: -15px; /* Déplace seulement le cursor */
+    font-weight: normal;
+
 }
 .mainContent .left p{
     font-size: 1.5rem;
@@ -476,4 +479,23 @@ border-radius: 50%;
         margin-bottom: 10px;
     }
 
+}
+#mobileMessage {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 90%;
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

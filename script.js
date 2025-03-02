@@ -90,6 +90,7 @@ async function setPersonalProjects(){
 }
 
 function showCompetences(id){
+    console.log(id);
     var bgBlur = document.getElementById('blurBg');
     var popUp = document.getElementById('popUp');
     var titlePopUp = document.getElementById('popUpTitle');
