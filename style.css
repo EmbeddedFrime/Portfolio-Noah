@@ -216,10 +216,13 @@ header .right a:hover{
     font-size: 5rem;
     font-weight: 900;
     margin: 0;
+    line-height: 1;
 }
 .cursor {
     position: relative;
     left: -15px; /* Déplace seulement le cursor */
+    font-weight: normal;
+
 }
 .mainContent .left p{
     font-size: 1.5rem;

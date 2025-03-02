@@ -124,20 +124,24 @@ window.addEventListener("load", (event) => {
     var i = 0;
     var text = "";
     var text2 = "";
-    var speed = 250;
+    var baseSpeed = 200;
     var speedCursor = 500;
     var cursor = '<span class="cursor">│</span>'; // Curseur dans un span
+
+    function getRandomSpeed() {
+        return baseSpeed + Math.random() * 100 - 50; // Variation de +/- 50ms
+    }
 
     async function typeWriter() {
         if (i < name.length) {
             text = name.slice(0, i + 1); // Get the substring up to the current letter
             nameDiv.innerHTML = text + cursor; // Show the cursor while typing
             i++;
-            await sleep(speed);
+            await sleep(getRandomSpeed());
             typeWriter(); // Continue typing the next letter
         } else {
             nameDiv.innerHTML = name; // Remove the cursor after "Noah" is fully typed
-            await sleep(speed);
+            await sleep(getRandomSpeed());
             typeWriterSurname(); // Move to typing the surname
         }
     }
@@ -147,7 +151,7 @@ window.addEventListener("load", (event) => {
             text2 = surname.slice(0, j + 1); // Get the substring for the surname
             nameDiv2.innerHTML = text2 + cursor; // Show the cursor while typing
             j++;
-            await sleep(speed);
+            await sleep(getRandomSpeed());
             typeWriterSurname(); // Continue typing the next letter
         } else {
             nameDiv2.innerHTML = "Perret" + cursor; // Blinking cursor after the full surname
@@ -196,11 +200,11 @@ window.addEventListener('keydown', (event) => {
 //affichage de l'image en pleine écran lorsqu'on clique dessus
 document.addEventListener('DOMContentLoaded', function() {
     var img = document.getElementById('imgR');
-    var audio = new Audio('./assets/a.mp3'); // Crée un nouvel élément audio
+    //var audio = new Audio('./assets/a.mp3'); // Crée un nouvel élément audio
 
     img.addEventListener('click', function() {
         var imgSrc = img.src;
         window.open(imgSrc, '_blank');
-        audio.play();
+        //audio.play();
     });
 });
