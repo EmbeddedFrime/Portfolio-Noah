@@ -84,24 +84,37 @@ async function setPersonalProjects(){
                 <h2 id="h${i}">${data[i].nom}</h2>
                 <p style="display:none;" id="d${i}">${data[i].texte}</p>
                 <p id="r${i}" class="ressource">${data[i].ressource}</p>
-                <div onclick="showCompetences(${i})" class="buttonSeeMore">Voir plus</div>
+                <div onclick="showCompetences(${i}, true)" class="buttonSeeMore">Voir plus</div>
             </div>
         `;
     }
 }
 
-function showCompetences(id){
+function showCompetences(id, isProject = false){
     var bgBlur = document.getElementById('blurBg');
     var popUp = document.getElementById('popUp');
     var titlePopUp = document.getElementById('popUpTitle');
     var ressName = document.getElementById('RName');
     var texte = document.getElementById('description');
     var img = document.getElementById('imgR');
-    type= competenceStatus=="verifier"?"V":"C";
-    img.src="assets/imgs/"+type+id+".png";
-    titlePopUp.innerText = document.getElementById('h'+id).innerText;
-    ressName.innerText = document.getElementById('r'+id).innerText;
-    texte.innerHTML = document.getElementById('d'+id).innerHTML;
+
+    if (isProject) {
+        // Fetch project data from projetsPerso.json
+        getJSONFile('projetsPerso').then(data => {
+            data = data['projetsPerso'][id];
+            img.src = data.img ? data.img : "assets/imgs/default.png";
+            titlePopUp.innerText = data.nom;
+            ressName.innerText = data.ressource;
+            texte.innerHTML = data.texte;
+        });
+    } else {
+        type = competenceStatus == "verifier" ? "V" : "C";
+        img.src = "assets/imgs/" + type + id + ".png";
+        titlePopUp.innerText = document.getElementById('h' + id).innerText;
+        ressName.innerText = document.getElementById('r' + id).innerText;
+        texte.innerHTML = document.getElementById('d' + id).innerHTML;
+    }
+
     bgBlur.style.display = "flex";
     popUp.style.display = "flex";
 
@@ -208,3 +221,19 @@ document.addEventListener('DOMContentLoaded', function() {
         //audio.play();
     });
 });
+
+//affication du message d'erreur si l'utilisateur est sur mobile
+function checkDevice() {
+    if (window.innerWidth <= 800) {
+        document.getElementById("mobileMessage").style.display = "block";
+        var bgBlur = document.getElementById('blurBg');
+        bgBlur.style.display = "flex";
+    }else {
+        document.getElementById("mobileMessage").style.display = "none";
+        var bgBlur = document.getElementById('blurBg');
+        bgBlur.style.display = "none";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', checkDevice);
+window.addEventListener('resize', checkDevice);
