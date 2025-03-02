@@ -64,16 +64,15 @@ async function updateCompetences(competence) {
 }
 
 
-//can be merged with updateCompetences
 async function setPersonalProjects(){
     var data = await getJSONFile('projetsPerso'); // Attendre que les données soient chargées
 
     data = data['projetsPerso'];
-    console.log(data);
     var mainDiv = document.getElementById('ProjetPersoContainer');
     mainDiv.innerHTML = "";
 
     for (var i = 0; i < data.length; i++) {
+        let id = "pp"+i;
         let illustrationContainer = data[i].svg 
             ? `<div class="iconContainer">${data[i].svg}</div>` 
             : `<div class="imgContainer"><img src="${data[i].img}"></div>`;
@@ -81,10 +80,10 @@ async function setPersonalProjects(){
         mainDiv.innerHTML += `
             <div class="competencesCard">
                 ${illustrationContainer}
-                <h2 id="h${i}">${data[i].nom}</h2>
-                <p style="display:none;" id="d${i}">${data[i].texte}</p>
-                <p id="r${i}" class="ressource">${data[i].ressource}</p>
-                <div onclick="showCompetences(${i})" class="buttonSeeMore">Voir plus</div>
+                <h2 id="h${id}">${data[i].nom}</h2>
+                <p style="display:none;" id="d${id}">${data[i].texte}</p>
+                <p id="r${id}" class="ressource">${data[i].ressource}</p>
+                <div onclick="showCompetences('${id}')" class="buttonSeeMore">Voir plus</div>
             </div>
         `;
     }
