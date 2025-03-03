@@ -201,11 +201,11 @@ window.addEventListener('keydown', (event) => {
 //affichage de l'image en pleine écran lorsqu'on clique dessus
 document.addEventListener('DOMContentLoaded', function() {
     var img = document.getElementById('imgR');
-    var audio = new Audio('./assets/a.mp3'); // Crée un nouvel élément audio
+    //var audio = new Audio('./assets/a.mp3'); // Crée un nouvel élément audio
 
     img.addEventListener('click', function() {
         var imgSrc = img.src;
         window.open(imgSrc, '_blank');
-        audio.play();
+       // audio.play();
     });
 });
