@@ -499,3 +499,14 @@ border-radius: 50%;
     z-index: 9999;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.new-badge {
+    background-color: #ff0000; /* Couleur de fond rouge */
+    color: #ffffff; /* Couleur du texte blanc */
+    padding: 2px 5px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 0.5em; /* Taille de la police */
+    margin-left: 5px; /* Espacement à gauche */
+    vertical-align: middle; /* Alignement vertical */
+
+}
