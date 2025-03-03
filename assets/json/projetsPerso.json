@@ -16,7 +16,7 @@
             "nom": "Projet à venir ...",
             "ressource": "",
             "texte": "Prochainement, j’ai pour projet de fabriquer une pédale à effet de guitare. Je me suis équipé de nouveau matériel pour ce projet plus complexe : je possède désormais mon propre fer à souder.(photo)<br>J’ai également commandé un adaptateur USB-C PD en 9V (photo 2)afin de s’adapter à la tension standard de ce type de pédale.<br>Pour réaliser la pédale à effet de guitare, je prendrai pour base le PCB suivant, disponible sur <a href='https://www.pedalpcb.com/product/pcb416' target='_blank'>pedalPCB</a>, où j’ai pu retrouver la liste complète du matériel nécessaire.<br>En ce qui concerne le châssis, j’utiliserai probablement une découpe laser en réutilisant des chutes de bois, que je personnaliserai avec de la peinture.",
-            "img":"/assets/imgs/P3.png"
+            "img":"/assets/imgs/pp2.png"
         }
     ]
 }
