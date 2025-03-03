@@ -57,7 +57,7 @@ async function updateCompetences(competence) {
                 <h2 id="h${i}">${data[competence][i].nom}</h2>
                 <p style="display:none;" id="d${i}">${data[competence][i].texte}</p>
                 <p id="r${i}" class="ressource">${data[competence][i].ressource}</p>
-                <div onclick="showCompetences(${i})" class="buttonSeeMore">Voir plus</div>
+                <div onclick="showCompetences('${i}')" class="buttonSeeMore">Voir plus</div>
             </div>
         `;
     }
@@ -97,7 +97,12 @@ function showCompetences(id){
     var ressName = document.getElementById('RName');
     var texte = document.getElementById('description');
     var img = document.getElementById('imgR');
-    type= competenceStatus=="verifier"?"V":"C";
+    let type = "";
+    if (!id.includes("pp")){
+        type= competenceStatus=="verifier"?"V":"C";
+    }
+
+    
     img.src="assets/imgs/"+type+id+".png";
     titlePopUp.innerText = document.getElementById('h'+id).innerText;
     ressName.innerText = document.getElementById('r'+id).innerText;
