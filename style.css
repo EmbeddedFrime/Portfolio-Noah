@@ -350,6 +350,7 @@ border-radius: 50%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    user-select: none;
 }
 /* à améliorer */
 .competencesCard {

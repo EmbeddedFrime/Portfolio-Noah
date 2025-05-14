@@ -78,7 +78,7 @@ async function setPersonalProjects() {
             : `<div class="imgContainer"><img src="${data[i].img}"></div>`;
 
         mainDiv.innerHTML += `
-            <div class="competencesCard" onclick="showCompetences('${i}')">
+            <div class="competencesCard" onclick="showCompetences('${id}')">
                 ${illustrationContainer}
                 <h2 id="h${id}">${data[i].nom}</h2>
                 <p style="display:none;" id="d${id}">${data[i].texte}</p>

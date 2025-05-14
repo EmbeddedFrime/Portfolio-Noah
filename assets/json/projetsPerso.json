@@ -16,13 +16,13 @@
             "nom": "Rapport de stage",
             "ressource": "",
             "texte": "Durant mon stage chez GCE Electronics, j’ai conçu et développé l’extension <span class=\"chgImg\" onclick=\"afficherImageAgauche('PP3_photo1')\">EBX-LINK</span>, une carte électronique facilitant la communication entre les équipements connectés de la marque via Bluetooth Mesh et connexion filaire (port RJ45). Ce projet m’a permis de participer à toutes les étapes du développement, de la conception matérielle (PCB, alimentation, routage) au développement logiciel (programmation des ESP32, mise en place des protocoles de communication). Mais aussi, à la création de prototype, tests sur un réseau réaliste dans un but de production en série de la carte.<br>Ce stage a été une expérience enrichissante, me permettant d’approfondir mes compétences en électronique embarquée, conception hardware et communication sans fil, tout en évoluant dans un cadre professionnel familiale et dynamique.<br> <a href='/assets/rapport.pdf' target='_blank' style='color: white; font-weight: bold;font-size: 20px;'>voir davantage</a>",
-            "img":"/assets/imgs/pp21_pp.png"
+            "img":"/assets/imgs/pp2_pp.png"
         },
         {
             "nom": "Projet à venir ...",
             "ressource": "",
             "texte": "Prochainement, j’ai pour projet de fabriquer une pédale à effet de guitare. Je me suis équipé de nouveau matériel pour ce projet plus complexe : je possède désormais mon propre <span class=\"chgImg\" onclick=\"afficherImageAgauche('P2_photo1')\">fer à souder</span>.<br>J’ai également commandé un adaptateur <span class=\"chgImg\" onclick=\"afficherImageAgauche('P2_photo2')\">USB-C PD 9V</span> afin de s’adapter à la tension standard de ce type de pédale.<br>Pour réaliser la pédale à effet de guitare, je prendrai pour base le PCB suivant, disponible sur <a href='https://www.pedalpcb.com/product/pcb416' target='_blank'>pedalPCB</a>.<br> Une fois le matériel nécessaire commandé et reçu, j’ai commencé la soudure des composants sur la carte <span class=\"chgImg\" onclick=\"afficherImageAgauche('P2_photo3')\">(Photo)</span>, en commençant par les composants du plus petit au plus grand. Cependant, je n’ai pas encore reçu la totalité des circuits intégrés nécessaires.<br>En ce qui concerne le châssis, j’utiliserai probablement une découpe laser en réutilisant des chutes de bois, que je personnaliserai avec de la peinture.",
-            "img":"/assets/imgs/pp2_pp.png"
+            "img":"/assets/imgs/pp3_pp.png"
         },
         {
             "nom": "Réparation d'une manette",
