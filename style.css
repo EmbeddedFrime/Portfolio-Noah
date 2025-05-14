@@ -113,7 +113,7 @@ body{
     cursor: pointer;
     color: var(--textColor);
     font-size: 2rem;
-
+    user-select: none;
 }
 header{
     color: var(--textColor);
@@ -206,6 +206,7 @@ header .right a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 .mainContent .left h1{
     font-size: 5rem;
@@ -350,8 +351,8 @@ border-radius: 50%;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-.competencesCard{
+/* à améliorer */
+.competencesCard {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -362,8 +363,19 @@ border-radius: 50%;
     margin: 10px;
     margin-bottom: 20px;
     min-width: 250px;
-    border-radius: 5%;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px var(--secondColor);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
+
+.competencesCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+    0 12px 24px var(--secondColor),
+    0 0 20px rgba(255, 255, 255, 0.4); /* halo blanc */
+}
+
 .competencesCard .iconContainer{
     background-color: #002864;
     padding: 20px;
@@ -398,6 +410,7 @@ border-radius: 50%;
     margin: 0;
     margin-top: 10px;
     text-align: center;
+    user-select: none;          /* Empêche la sélection de texte */
 }
 .competencesCard p{
     font-size: 1rem;
@@ -413,6 +426,7 @@ border-radius: 50%;
     border-radius: 5px;
     margin-top: 20px;
     cursor: pointer;
+    user-select: none;
 }
 .buttonSeeMore a{
     text-decoration: none;

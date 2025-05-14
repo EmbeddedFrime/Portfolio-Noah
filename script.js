@@ -1,10 +1,10 @@
 /* Fonction ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-var competenceStatus="verifier";
+var competenceStatus = "verifier";
 setPersonalProjects();
-function afficherImageAgauche(imgLink){
+function afficherImageAgauche(imgLink) {
     var img = document.getElementById('imgR');
-    img.src = "assets/imgs/more/"+imgLink+".png";
+    img.src = "assets/imgs/more/" + imgLink + ".png";
 }
 
 async function getJSONFile(file) {
@@ -20,7 +20,7 @@ async function getJSONFile(file) {
     }
 }
 
-function closePopUp(){
+function closePopUp() {
     var popUp = document.getElementById('popUp');
     var bgBlur = document.getElementById('blurBg');
     popUp.style.display = "none";
@@ -30,11 +30,11 @@ function closePopUp(){
     document.body.style.overflow = 'auto';
 }
 
-function changeCompetences(){
-    if (competenceStatus == "verifier"){
+function changeCompetences() {
+    if (competenceStatus == "verifier") {
         updateCompetences("concevoir");
         competenceStatus = "concevoir";
-    }else{
+    } else {
         updateCompetences("verifier");
         competenceStatus = "verifier";
     }
@@ -47,12 +47,12 @@ async function updateCompetences(competence) {
     mainDiv.innerHTML = "";
 
     for (var i = 0; i < data[competence].length; i++) {
-        let illustrationContainer = data[competence][i].svg 
-            ? `<div class="iconContainer">${data[competence][i].svg}</div>` 
+        let illustrationContainer = data[competence][i].svg
+            ? `<div class="iconContainer">${data[competence][i].svg}</div>`
             : `<div class="imgContainer"><img src="${data[competence][i].img}"></div>`;
 
         mainDiv.innerHTML += `
-            <div class="competencesCard">
+            <div class="competencesCard" onclick="showCompetences('${i}')">
                 ${illustrationContainer}
                 <h2 id="h${i}">${data[competence][i].nom}</h2>
                 <p style="display:none;" id="d${i}">${data[competence][i].texte}</p>
@@ -64,7 +64,7 @@ async function updateCompetences(competence) {
 }
 
 
-async function setPersonalProjects(){
+async function setPersonalProjects() {
     var data = await getJSONFile('projetsPerso'); // Attendre que les données soient chargées
 
     data = data['projetsPerso'];
@@ -72,13 +72,13 @@ async function setPersonalProjects(){
     mainDiv.innerHTML = "";
 
     for (var i = 0; i < data.length; i++) {
-        let id = "pp"+i;
-        let illustrationContainer = data[i].svg 
-            ? `<div class="iconContainer">${data[i].svg}</div>` 
+        let id = "pp" + i;
+        let illustrationContainer = data[i].svg
+            ? `<div class="iconContainer">${data[i].svg}</div>`
             : `<div class="imgContainer"><img src="${data[i].img}"></div>`;
 
         mainDiv.innerHTML += `
-            <div class="competencesCard">
+            <div class="competencesCard" onclick="showCompetences('${i}')">
                 ${illustrationContainer}
                 <h2 id="h${id}">${data[i].nom}</h2>
                 <p style="display:none;" id="d${id}">${data[i].texte}</p>
@@ -89,7 +89,7 @@ async function setPersonalProjects(){
     }
 }
 
-function showCompetences(id){
+function showCompetences(id) {
     console.log(id);
     var bgBlur = document.getElementById('blurBg');
     var popUp = document.getElementById('popUp');
@@ -98,15 +98,15 @@ function showCompetences(id){
     var texte = document.getElementById('description');
     var img = document.getElementById('imgR');
     let type = "";
-    if (!id.includes("pp")){
-        type= competenceStatus=="verifier"?"V":"C";
+    if (!id.includes("pp")) {
+        type = competenceStatus == "verifier" ? "V" : "C";
     }
 
-    
-    img.src="assets/imgs/"+type+id+".png";
-    titlePopUp.innerText = document.getElementById('h'+id).innerText;
-    ressName.innerText = document.getElementById('r'+id).innerText;
-    texte.innerHTML = document.getElementById('d'+id).innerHTML;
+
+    img.src = "assets/imgs/" + type + id + ".png";
+    titlePopUp.innerText = document.getElementById('h' + id).innerText;
+    ressName.innerText = document.getElementById('r' + id).innerText;
+    texte.innerHTML = document.getElementById('d' + id).innerHTML;
     bgBlur.style.display = "flex";
     popUp.style.display = "flex";
 
@@ -169,21 +169,21 @@ window.addEventListener("load", (event) => {
 //descend la fleche quand on scroll
 window.addEventListener("scroll", (event) => {
     var scrollButton = document.getElementById('downArrow');
-    if(window.scrollY > 50){
+    if (window.scrollY > 50) {
         scrollButton.style.bottom = "-1000px";
     }
-    else{
+    else {
         scrollButton.style.display = "flex";
         scrollButton.style.bottom = "40px";
     }
-    if(scrollButton.style.bottom == "-1000px"){
+    if (scrollButton.style.bottom == "-1000px") {
         scrollButton.style.display = "none";
     }
 });
 
 // scroll down arrow button
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('downArrow').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('downArrow').addEventListener('click', function () {
         window.scrollBy({
             top: window.innerHeight,
             behavior: 'smooth'
@@ -199,25 +199,25 @@ window.addEventListener('keydown', (event) => {
 });
 
 //affichage de l'image en pleine écran lorsqu'on clique dessus
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var img = document.getElementById('imgR');
     //var audio = new Audio('./assets/a.mp3'); // Crée un nouvel élément audio
 
-    img.addEventListener('click', function() {
+    img.addEventListener('click', function () {
         var imgSrc = img.src;
         window.open(imgSrc, '_blank');
-       // audio.play();
+        // audio.play();
     });
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 800) {
         document.getElementById('banner').style.display = 'block';
-    }else {
+    } else {
         document.getElementById('banner').style.display = 'none';
     }
-    document.getElementById('close-banner').addEventListener('click', function() {
+    document.getElementById('close-banner').addEventListener('click', function () {
         document.getElementById('banner').style.display = 'none';
     });
 });
