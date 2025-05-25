@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Portfolio Noah Perret</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Roboto">
-    <link rel="icon" type="image/png" href="assets/fivecon64.png"> 
+    <link rel="icon" type="image/png" href="assets/favicon256.png"> 
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </head>
 <script src="script.js"> </script>
 <body>
@@ -33,14 +37,24 @@
         </div>
         <div class="right">
             <a href="#">Accueil</a>
-            <a href="https://game.noahperret.com">Game<span class="new-badge">Nouveau</span></a></a>
+            <a href="https://game.noahperret.com" target="_blank" rel="noopener noreferrer"> Game<span class="new-badge">Nouveau</span></a></a>
             <a href="#competencesContainer">Compétences</a>
             <a href="/assets/cv.pdf">CV</a>
-            <a href="">Contact</a>
+            <a href="https://linktr.ee/noahperret" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
-        <div class="rightPhone">
+        <div class="rightPhone" id="menuToggle">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
         </div>
+        <!-- Menu déroulant mobile-->
+        <nav class="mobileMenu" id="mobileMenu">
+            <ul>
+                <li><a href="#a">Accueil</a></li>
+                <li><a href="https://game.noahperret.com" target="_blank" rel="noopener noreferrer">Game<span class="new-badge">Nouveau</span></a></li>
+                <li><a href="#competencesContainer">Compétences</a></li>
+                <li><a href="/assets/cv.pdf">CV</a></li>
+                <li><a href="https://linktr.ee/noahperret" target="_blank" rel="noopener noreferrer">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <div id="downArrow" class="downArrow">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M246.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 402.7 361.4 265.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 210.7 361.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z"/></svg>
@@ -59,7 +73,11 @@
                         <p>Étudiant en GEII</p>
                         <p>PEIP D</p>
                     </div>
-                    
+                </div>
+                <div class="cta-buttons">
+                    <a href="#ProjetPersoHeader" class="btn btn-primary">📁 Voir mes projets</a>
+                    <a href="https://linktr.ee/noahperret" class="btn btn-outline" target="_blank" rel="noopener noreferrer" >✉️ Me contacter</a>
+                    <!--<a href="./assets/cv.pdf" class="btn btn-cv" download>📄 Télécharger mon CV</a>!-->
                 </div>
             </div>
         </div>
@@ -76,10 +94,27 @@
             <h1>Compétences
                 <div class="underline"></div>
             </h1>
+            <!-- 
             <label class="switch">
                 <input onclick="changeCompetences()" type="checkbox">
                 <span class="slider round"></span>
-              </label>
+            </label> -->
+            <!-- Conteneur PC -->
+            <div class="tab-container">
+                  <button onclick="changeCompetences()" class="tab-button active">Concevoir</button>
+                  <button onclick="changeCompetences()" class="tab-button">Vérifier</button>
+                  <button class="tab-button">Maintenir</button>
+                  <button class="tab-button">Implementer</button>
+            </div>
+            <!-- Dropdown mobile -->
+            <div class="tab-dropdown">
+            <select id="tab-select">
+                <option value="concevoir">Concevoir</option>
+                <option value="verifier">Vérifier</option>
+                <option value="valider">Maintenir</option>
+                <option value="deployer">Implementer</option>
+            </select>
+            </div>
         </div>
 
         
@@ -94,7 +129,9 @@
             </div>
         </div>
 
-        <h1>Projets personnels<div class="underline"></div></h1>
+        <div id="ProjetPersoHeader" class="headerCompetences">
+            <h1>Projets personnels<div class="underline"></div></h1>
+        </div>
         <div id="ProjetPersoContainer" class="competencesContainer">
             <div class="competencesCard">
                 <div class="iconContainer">
@@ -107,6 +144,17 @@
         </div>
         
     </div>
-    
+    <div class="footer-basic">
+        <footer>
+            <div class="icon">
+                <a href="#"><ion-icon name="globe-outline"></ion-icon></a>
+                <a href="https://game.noahperret.com"><ion-icon name="game-controller"></ion-icon></a>
+                <a href="https://linkedin.com/in/noah-perret"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://github.com/FrimeNotInformatician"><ion-icon name="logo-github"></ion-icon></a>
+            </div>
+            <p class="copyright">Noah Perret © 2005</p>
+        </footer>
+    </div>
+
 </body>
 </html>

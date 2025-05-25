@@ -122,7 +122,20 @@ header{
     display: flex;
     flex-direction: row;
     height: 8vh;
+
+    /*essai nav bar*/
+    background: rgba(2, 8, 24, 0.8); /* couleur de fond avec opacité */    
+    backdrop-filter: blur(10px); /* flou d'arrière-plan */
+    box-shadow: none;
+    transition: top 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    transition: transform 0.1s linear;
+    will-change: transform;
 }
+
 header .left{
     width: 20%;
     display: flex;
@@ -170,7 +183,7 @@ header .right a:hover{
     justify-content: center;
     width: 100%;
     position: absolute;
-    bottom: 40px;
+    bottom: 35px;
     height: 50px;
     
 }
@@ -199,6 +212,7 @@ header .right a:hover{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-top: 8vh; /* 8vh pour le header */
 }
 .mainContent .left,.mainContent .right{
     width: 48%;
@@ -348,7 +362,7 @@ border-radius: 50%;
 .competencesContainer{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     user-select: none;
 }
@@ -362,7 +376,7 @@ border-radius: 50%;
     width: 15%;
     padding: 30px;
     margin: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     min-width: 250px;
     border-radius: 15px;
     box-shadow: 0 6px 18px var(--secondColor);
@@ -433,13 +447,274 @@ border-radius: 50%;
     text-decoration: none;
     color: var(--textColor);
 }
+
+/*css Noah*/
+
+.new-badge {
+    background-color: #ff0000; /* Couleur de fond rouge */
+    color: #ffffff; /* Couleur du texte blanc */
+    padding: 2px 5px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 0.5em; /* Taille de la police */
+    margin-left: 5px; /* Espacement à gauche */
+    vertical-align: middle; /* Alignement vertical */
+}
+
+#banner {
+    background-color: #ff0000;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    font-size: 14px;
+}
+#close-banner {
+    color: #ffffff;
+    margin-left: 10px;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.footer-basic {
+    /*border-top: 1px solid rgba(255, 255, 255, 0.1);  /*fine ligne claire   */
+    background: linear-gradient(to bottom, var(--bgColor), var(--secondColor));
+    color: #4b4c4d;
+    padding-top: 6vh;
+    padding-bottom: 3vh;
+
+}
+
+
+
+.footer-basic .icon {
+  text-align:center;
+  
+}
+
+.footer-basic .icon > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display: inline-flex; /* <-- ici */
+  align-items: center;  /* centre verticalement */
+  justify-content: center; /* centre horizontalement */
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color: var(--textColor);
+  opacity:0.75;
+}
+
+.footer-basic .icon > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+/* Style général des boutons */
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-button {
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid var(--secondColor);
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0px 18px var(--secondColor);  /*halo bleue*/ 
+}
+
+.tab-button:hover {
+  border-color: #064CFF;
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+
+.tab-button.active {
+  border-color: #064CFF;
+  color: white;
+}
+
+/* Masquer la dropdown par défaut */
+.tab-dropdown {
+  display: none;
+}
+
+.tab-dropdown select {
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: 2px solid var(--secondColor);
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  appearance: none; /* Masque la flèche par défaut */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M6 8L0 0h12L6 8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0px 18px var(--secondColor);  /*halo bleue*/ 
+}
+.tab-dropdown select option {
+   color: var(--secondColor);              /* texte foncé */
+  background-color: #f1f5f9;   /* ne s'appliquera pas partout */
+  font-weight: 500;
+}
+/* Hover/focus styling */
+.tab-dropdown select:hover,
+.tab-dropdown select:focus {
+  border-color: #064CFF;
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: none;
+   /*box-shadow: 0 0px px #064CFF;  /*halo bleue*/ 
+
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #2563eb; /* bleu vif */
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
+}
+
+.btn-outline {
+  border: 2px solid #ccc;
+  color: #ccc;
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #ccc;
+  color: #111;
+  transform: scale(1.05);
+}
+
+.btn-cv {
+  background-color: #10b981; /* vert doux */
+  color: white;
+  border: none;
+}
+
+.btn-cv:hover {
+  background-color: #047857;
+  transform: scale(1.05);
+}
+
+nav {
+    display: none;
+}
+
+.mobileMenu, ul {
+    display: none;
+}
+
+
+
+/*.competencesContainer.slide {
+    animation: slideCompetences 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes slideCompetences {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }animation
+}*/ 
+
+/* CSS du code mobile */
 @media screen and (max-width: 800px){
     .compPopUp #imgR{
-        display: none;
+            padding-top:70% ;
+            width: 95%;
+            height: 45vw;       /* hauteur forcée égale à la largeur de l'écran */
+            object-fit: cover;
+            aspect-ratio: 1 / 1;      /* carré garanti */
+            border-radius: 1rem;
+            display: block;
+            overflow: visible; /* au cas où l'image déborde */
     }
     .compPopUp .right{
         width: 100%;
-        text-align: center;
+        text-align: left;
+        line-height: 1.5;
+        text-wrap: balance;
+        padding: 10px;
+    }
+    .popUpContainer{
+        width: 85%;
+        height: 95%;
+    }
+    .compPopUp{
+        display: flex;
+        width: 90%;
+        height: 90%;
+        padding: 1rem;
+        flex-direction: column;
+
+
+    }
+    .compPopUp #description{
+         width: auto;
+         max-height: 45%;
+         font-weight: 400;
+    }
+    .closePopUp{
+        width: 90%;
+        display: none;
+    }
+
+    
+
+    header{
+            position: absolute;
     }
     header .right{
         display: none;
@@ -459,20 +734,30 @@ border-radius: 50%;
         flex-direction: column-reverse;
         justify-content: start;
         height: 100vh;
+        padding-top: 8vh;
     }
     .mainContent .center{
         height: 2%;
-        width: 20%;
+        width: 40%;
+    }
+    .mainContent .right {
+        width: 100%; 
+    }
+    .mainContent .right img {
+        max-width: 330px;
     }
     .mainContent .center .line{
         height: 2px;
         width: 100%;
     }
-    .leftText h1{
+    .mainContent .left  h1{
         text-align: center;
+        font-size: 4rem;
     }
-    .leftText pre{
+    .mainContent .left  pre{
         text-align: center;
+        font-size: 4rem;
+        padding-left: 7%;
     }
     .leftUnderText{
         justify-content: center;
@@ -485,6 +770,8 @@ border-radius: 50%;
     }
     .underMainContent {
         align-items: center;
+        user-select: none;          /* Empêche la sélection de texte */
+
     }
     .underMainContent h1 {
         margin: 0;
@@ -492,41 +779,94 @@ border-radius: 50%;
         flex-direction: column;
         align-items: center;
         margin-bottom: 10px;
+    } 
+
+    .tab-container {
+    display: none;
     }
 
+    .tab-dropdown {
+        display: block;
+    }
+
+    .headerCompetences {
+        padding-bottom: 10px;
+    }
+
+ 
+ 
+    .formations {
+        display: none;
+    }
+
+    /* Menu burger mobile */
+    .mobileMenu {
+        display: none;
+        position: absolute;
+        top: 60px; /* hauteur du header */
+        right: 10px;
+        background: var(--secondColor, #071834);
+        width: 220px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        z-index: 2000;
+        border: 1px solid #23325a;
+        animation: slideDownMenu 0.3s;
+    }
+
+    @keyframes slideDownMenu {
+        0% { opacity: 0; transform: translateY(-20px);}
+        100% { opacity: 1; transform: translateY(0);}
+    }
+
+    .mobileMenu ul {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobileMenu li {
+        border-bottom: 1px solid #23325a;
+    }
+
+    .mobileMenu li:last-child {
+        border-bottom: none;
+    }
+
+    .mobileMenu a {
+        display: block;
+        padding: 1.1rem 1.5rem;
+        text-decoration: none;
+        color: var(--textColor, #fff);
+        font-size: 1.1rem;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .mobileMenu a:hover {
+        background: #064CFF;
+        color: #fff;
+    }
+
+    .mobileMenu .new-badge {
+        background: #ff2323;
+        color: #fff;
+        font-size: 0.6em;
+        border-radius: 6px;
+        padding: 2px 6px;
+        margin-left: 6px;
+        vertical-align: middle;
+    }
+
+    /* Affichage du menu quand .show est présent */
+    .mobileMenu.show {
+        display: block;
+    }
+
+
+
 }
 
-.new-badge {
-    background-color: #ff0000; /* Couleur de fond rouge */
-    color: #ffffff; /* Couleur du texte blanc */
-    padding: 2px 5px; /* Espacement interne */
-    border-radius: 5px; /* Coins arrondis */
-    font-size: 0.5em; /* Taille de la police */
-    margin-left: 5px; /* Espacement à gauche */
-    vertical-align: middle; /* Alignement vertical */
-}
 
 
-#banner {
-    background-color: #ff0000;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    font-size: 14px;
-}
-#close-banner {
-    color: #ffffff;
-    margin-left: 10px;
-    background: none;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-}
 

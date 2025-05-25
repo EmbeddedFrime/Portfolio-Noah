@@ -31,19 +31,41 @@ function closePopUp() {
 }
 
 function changeCompetences() {
+    switch (competenceStatus) {
+        case "concevoir":
+            competenceStatus = "verifier";
+            break;
+        case "verifier":
+            competenceStatus = "concevoir";
+            break;
+    }
+    updateCompetences(competenceStatus);
+
+    
+    /* Tu as pas rendu ça facilement modulable
     if (competenceStatus == "verifier") {
         updateCompetences("concevoir");
         competenceStatus = "concevoir";
     } else {
         updateCompetences("verifier");
         competenceStatus = "verifier";
-    }
+    }*/
 }
 
 async function updateCompetences(competence) {
     var data = await getJSONFile('competences'); // Attendre que les données soient chargées
-
     var mainDiv = document.getElementById('competencesContainer');
+
+    /*//test Ajoute la classe d'animation
+    mainDiv.classList.add('slide');
+
+    // Quand l'animation est terminée, retire la classe
+    mainDiv.addEventListener('animationend', function handler() {
+        mainDiv.classList.remove('slide');
+        mainDiv.removeEventListener('animationend', handler);
+    });*/ 
+
+
     mainDiv.innerHTML = "";
 
     for (var i = 0; i < data[competence].length; i++) {
@@ -90,6 +112,7 @@ async function setPersonalProjects() {
 }
 
 function showCompetences(id) {
+    console.log("yoyo");
     console.log(id);
     var bgBlur = document.getElementById('blurBg');
     var popUp = document.getElementById('popUp');
@@ -97,6 +120,7 @@ function showCompetences(id) {
     var ressName = document.getElementById('RName');
     var texte = document.getElementById('description');
     var img = document.getElementById('imgR');
+    var header = document.querySelector("header");
     let type = "";
     if (!id.includes("pp")) {
         type = competenceStatus == "verifier" ? "V" : "C";
@@ -109,6 +133,11 @@ function showCompetences(id) {
     texte.innerHTML = document.getElementById('d' + id).innerHTML;
     bgBlur.style.display = "flex";
     popUp.style.display = "flex";
+    //header.style.transform = `translateY(-8vh)`; // Pour cacher le header lors de l'affichage de la pop-up
+
+
+    
+    //here
 
     // Empêcher le défilement
     document.body.style.overflow = 'hidden';
@@ -174,7 +203,7 @@ window.addEventListener("scroll", (event) => {
     }
     else {
         scrollButton.style.display = "flex";
-        scrollButton.style.bottom = "40px";
+        scrollButton.style.bottom = "35px";
     }
     if (scrollButton.style.bottom == "-1000px") {
         scrollButton.style.display = "none";
@@ -220,4 +249,41 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('close-banner').addEventListener('click', function () {
         document.getElementById('banner').style.display = 'none';
     });
+});
+
+
+// Gestion du menu burger mobile
+document.addEventListener('DOMContentLoaded', function () {
+    menuToggle.addEventListener('click', function () {
+        if (mobileMenu.style.display === 'block') {
+            mobileMenu.style.display = 'none';
+        } else {
+            mobileMenu.style.display = 'block';
+        }
+    });
+});
+
+
+// Gestion de la navbar et du défilement
+document.addEventListener("DOMContentLoaded", () => { //Vérifie que le DOM est chargé
+  const header = document.querySelector("header");
+  let lastScrollY = window.scrollY;
+  let headerOffset = 0;
+  const headerHeight = header.offsetHeight;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    const delta = currentScroll - lastScrollY;
+
+    // Met à jour l’offset en fonction du scroll
+    headerOffset -= delta;
+
+    // Limite l'offset entre 0 (visible) et -headerHeight (caché complètement)
+    headerOffset = Math.max(-headerHeight, Math.min(0, headerOffset));
+
+    // Applique la translation verticale
+    header.style.transform = `translateY(${headerOffset}px)`;
+
+    lastScrollY = currentScroll;
+  });
 });
