@@ -101,10 +101,10 @@
             </label> -->
             <!-- Conteneur PC -->
             <div class="tab-container">
-                  <button onclick="changeCompetences()" class="tab-button active">Concevoir</button>
-                  <button onclick="changeCompetences()" class="tab-button">Vérifier</button>
-                  <button class="tab-button">Maintenir</button>
-                  <button class="tab-button">Implementer</button>
+                  <button onclick="changeCompetences(this.id)" id="concevoir" class="tab-button active">Concevoir</button>
+                  <button onclick="changeCompetences(this.id)" id="verifier" class="tab-button">Vérifier</button>
+                  <button onclick="changeCompetences(this.id)" id="maintenir" class="tab-button">Maintenir</button>
+                  <button onclick="changeCompetences(this.id)" id="implanter" class="tab-button">Implanter</button>
             </div>
             <!-- Dropdown mobile -->
             <div class="tab-dropdown">
@@ -155,6 +155,5 @@
             <p class="copyright">Noah Perret © 2005</p>
         </footer>
     </div>
-
 </body>
 </html>

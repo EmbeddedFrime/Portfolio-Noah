@@ -30,26 +30,19 @@ function closePopUp() {
     document.body.style.overflow = 'auto';
 }
 
-function changeCompetences() {
-    switch (competenceStatus) {
-        case "concevoir":
-            competenceStatus = "verifier";
-            break;
-        case "verifier":
-            competenceStatus = "concevoir";
-            break;
-    }
-    updateCompetences(competenceStatus);
+function changeCompetences(choosenCompetence) {
+    updateCompetences(choosenCompetence);
 
-    
-    /* Tu as pas rendu ça facilement modulable
-    if (competenceStatus == "verifier") {
-        updateCompetences("concevoir");
-        competenceStatus = "concevoir";
-    } else {
-        updateCompetences("verifier");
-        competenceStatus = "verifier";
-    }*/
+    //clear all CSS
+    var allButtons = document.querySelector(".tab-container")
+    console.log(allButtons.children[0])
+    Array.from(allButtons.children).forEach(button => {
+        button.className="tab-button"
+        console.log(button.style)
+    });
+
+    //set current
+    document.getElementById(choosenCompetence).classList.add("active")
 }
 
 async function updateCompetences(competence) {
