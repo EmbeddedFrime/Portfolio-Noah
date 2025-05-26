@@ -46,7 +46,7 @@ body{
     width: 85%;
     height: 85%; /* 80 % à la base*/
     background-color: var(--secondColor); /*#071834c8 transparent*/
-    border-radius: 10px;
+    border-radius: 1rem;
     flex-direction: row;
     align-items: center;
     justify-content: center;   /* border: 2px solid #bbbbbb; Une bordure de 2 pixels, pleine, noire */      
@@ -55,7 +55,7 @@ body{
 .compPopUp img{
     width: 40%;
     height: 100%;
-    border-radius: 10px 0 0 10px;
+    border-radius: 1rem 0 0 1rem;
 }
 .compPopUp .chgImg{
     color: #064CFF;
@@ -438,7 +438,7 @@ border-radius: 50%;
     color: var(--textColor);
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     margin-top: 20px;
     cursor: pointer;
     user-select: none;
@@ -461,17 +461,8 @@ border-radius: 50%;
 }
 
 #banner {
-    background-color: #ff0000;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1001;
-    font-size: 14px;
+    
+    display: none;
 }
 #close-banner {
     color: #ffffff;
@@ -655,6 +646,8 @@ nav {
 
 
 
+
+
 /*.competencesContainer.slide {
     animation: slideCompetences 0.5s cubic-bezier(0.4,0,0.2,1);
 }
@@ -672,7 +665,7 @@ nav {
 /* CSS du code mobile */
 @media screen and (max-width: 800px){
     .compPopUp #imgR{
-            padding-top:70% ;
+            margin-top:70% ;
             width: 95%;
             height: 45vw;       /* hauteur forcée égale à la largeur de l'écran */
             object-fit: cover;
@@ -687,6 +680,7 @@ nav {
         line-height: 1.5;
         text-wrap: balance;
         padding: 10px;
+        border-radius: 1rem;
     }
     .popUpContainer{
         width: 85%;
@@ -792,8 +786,6 @@ nav {
     .headerCompetences {
         padding-bottom: 10px;
     }
-
- 
  
     .formations {
         display: none;
@@ -861,6 +853,21 @@ nav {
     /* Affichage du menu quand .show est présent */
     .mobileMenu.show {
         display: block;
+    }
+
+    #banner {
+    background-color: #ff0000;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    font-size: 14px;
+    display: block;
     }
 
 

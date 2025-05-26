@@ -241,11 +241,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (window.innerWidth <= 800) {
-        document.getElementById('banner').style.display = 'block';
-    } else {
-        document.getElementById('banner').style.display = 'none';
-    }
     document.getElementById('close-banner').addEventListener('click', function () {
         document.getElementById('banner').style.display = 'none';
     });
