@@ -32,6 +32,7 @@ function closePopUp() {
 
 function changeCompetences(choosenCompetence) {
     updateCompetences(choosenCompetence);
+    competenceStatus = choosenCompetence;
 
     //clear all CSS
     var allButtons = document.querySelector(".tab-container")
@@ -115,8 +116,22 @@ function showCompetences(id) {
     var img = document.getElementById('imgR');
     var header = document.querySelector("header");
     let type = "";
+    
     if (!id.includes("pp")) {
-        type = competenceStatus == "verifier" ? "V" : "C";
+        switch (competenceStatus) {
+            case "verifier":
+                type = "V";
+                break;
+            case "concevoir":
+                type = "C";
+                break;
+            case "maintenir":
+                type = "M";
+                break;
+            case "implanter":
+                type = "I"; 
+                break;
+        }
     }
 
 
