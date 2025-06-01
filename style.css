@@ -59,8 +59,20 @@ body{
 }
 .compPopUp .chgImg{
     color: #064CFF;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
+}
+.compPopUp .chgImg:hover{
+    color: #00bfff; /* Bleu encore plus vif */
+  text-decoration: underline; /* ou un soulignement progressif */
+}
+.compPopUp a:visited {
+  color: #064CFF; /* même couleur pour les deux */
+  text-decoration: none;
+}
+.compPopUp a:hover{
+    color: #00bfff; /* Bleu encore plus vif */
+  text-decoration: underline; /* ou un soulignement progressif */
 }
 .compPopUp .right{
     width: auto;
@@ -555,7 +567,7 @@ border-radius: 50%;
 }
 
 .tab-dropdown select {
-  padding: 0.6rem 1.2rem;
+    padding: 0.6rem 2.4rem 0.6rem 1.2rem; /* Plus de padding à droite que à gauche */
   border-radius: 12px;
   border: 2px solid var(--secondColor);
   background-color: transparent;
@@ -643,7 +655,12 @@ nav {
 .mobileMenu, ul {
     display: none;
 }
-
+.indent {
+   display: inline-block;
+  width: 0;
+  height: 0;
+  padding-bottom: 1.6em; /* Ajuste la valeur pour la taille du retrait */
+}
 
 
 
@@ -697,7 +714,7 @@ nav {
     }
     .compPopUp #description{
          width: auto;
-         max-height: 45%;
+         max-height: 40%;
          font-weight: 400;
     }
     .closePopUp{
