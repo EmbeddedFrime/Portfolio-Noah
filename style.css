@@ -682,14 +682,13 @@ nav {
 /* CSS du code mobile */
 @media screen and (max-width: 800px){
     .compPopUp #imgR{
-            margin-top:70% ;
+            margin-top:85% ;
             width: 95%;
-            height: 45vw;       /* hauteur forcée égale à la largeur de l'écran */
+            height: 60vw;       /* hauteur forcée égale à la largeur de l'écran */
             object-fit: cover;
             aspect-ratio: 1 / 1;      /* carré garanti */
             border-radius: 1rem;
             display: block;
-            overflow: visible; /* au cas où l'image déborde */
     }
     .compPopUp .right{
         width: 100%;
@@ -713,6 +712,11 @@ nav {
 
     }
     .compPopUp #description{
+         width: auto;
+         max-height: 35%;
+         font-weight: 400;
+    }
+    .compPopUp #description2{
          width: auto;
          max-height: 40%;
          font-weight: 400;
@@ -761,14 +765,19 @@ nav {
         height: 2px;
         width: 100%;
     }
+    .mainContent .left {
+        min-width: 60%;
+
+    }
     .mainContent .left  h1{
         text-align: center;
         font-size: 4rem;
+
     }
     .mainContent .left  pre{
         text-align: center;
         font-size: 4rem;
-        padding-left: 7%;
+        padding-left: 8%;
     }
     .leftUnderText{
         justify-content: center;

@@ -290,3 +290,4 @@ document.addEventListener("DOMContentLoaded", () => { //Vérifie que le DOM est 
     lastScrollY = currentScroll;
   });
 });
+
