@@ -283,6 +283,12 @@ header .right a:hover{
 .mainContent .right img {
     width: 50%;
 }
+.right .bottom {
+    z-index: 1;
+}
+.right .top {
+    z-index: 2; /* Au-dessus de l’autre image */
+}
 .underMainContent{
     padding: 0 2%;
     display: flex;
@@ -661,7 +667,11 @@ nav {
   height: 0;
   padding-bottom: 1.6em; /* Ajuste la valeur pour la taille du retrait */
 }
-
+.ressource-padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block; /* permet au padding vertical de fonctionner */
+}
 
 
 

@@ -13,9 +13,9 @@
             "img":"assets/imgs/calc.jpg"
         },
         {
-            "nom": "Rapport de stage",
+            "nom": "Rapport de stage ",
             "ressource": "",
-            "texte": "Durant mon stage chez GCE Electronics, j’ai conçu et développé l’extension <span class=\"chgImg\" onclick=\"afficherImageAgauche('PP3_photo1')\">EBX-LINK</span>, une carte électronique facilitant la communication entre les équipements connectés de la marque via Bluetooth Mesh et connexion filaire (port RJ45). Ce projet m’a permis de participer à toutes les étapes du développement, de la conception matérielle (PCB, alimentation, routage) au développement logiciel (programmation des ESP32, mise en place des protocoles de communication). Mais aussi, à la création de prototype, tests sur un réseau réaliste dans un but de production en série de la carte.<br>Ce stage a été une expérience enrichissante, me permettant d’approfondir mes compétences en électronique embarquée, conception hardware et communication sans fil, tout en évoluant dans un cadre professionnel familiale et dynamique.<br> <a href='/assets/rapport.pdf' target='_blank' style='color: white; font-weight: bold;font-size: 20px;'>voir davantage</a>",
+            "texte": "<span class='indent'></span>Durant mon stage chez GCE Electronics, j’ai conçu et développé l’extension <span class=\"chgImg\" onclick=\"afficherImageAgauche('PP3_photo1')\">EBX-LINK</span>, une carte électronique facilitant la communication entre les équipements connectés de la marque via Bluetooth Mesh et connexion filaire (port RJ45). Ce projet m’a permis de participer à toutes les étapes du développement, de la conception matérielle (PCB, alimentation, routage) au développement logiciel (programmation des ESP32, mise en place des protocoles de communication). Mais aussi, à la création de prototype, tests sur un réseau réaliste dans un but de production en série de la carte.<br>Ce stage a été une expérience enrichissante, me permettant d’approfondir mes compétences en électronique embarquée, conception hardware et communication sans fil, tout en évoluant dans un cadre professionnel familiale et dynamique.<br> <a href='/assets/rapport.pdf' target='_blank' style='color: white; font-weight: bold;font-size: 20px;'>voir davantage</a>",
             "img":"/assets/imgs/pp2_pp.png"
         },
         {
