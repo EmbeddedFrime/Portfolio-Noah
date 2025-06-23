@@ -2,6 +2,8 @@
     --bgColor:#020818;
     --secondColor:#071834;
     --textColor:#fff;
+    --mainNoahImgSize: 300px; /* Taille de l'image principale de Noah */
+    --boxColor:#112a4e4b; /* Couleur de fond des boîtes */
 }
 html{
     scroll-behavior: smooth;
@@ -279,14 +281,33 @@ header .right a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 .mainContent .right img {
-    width: 50%;
+    width: 100%;
+}
+.mainContent .right .imageContainer{
+    height: 50%;
+    aspect-ratio: 1 / 1; 
+    position: relative;
+}
+.mainContent .right .imageContainer .imgContainerabsolute{
+    position: absolute;
+    background: rgba(97, 169, 252, 0.11);
+    backdrop-filter: blur(4.5px);
+    box-shadow: var(--boxColor) 0px 54px 55px, var(--boxColor) 0px -12px 30px, var(--boxColor) 0px 4px 6px, var(--boxColor) 0px 12px 13px, var(--boxColor) 0px -3px 5px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 50%;
 }
 .right .bottom {
     z-index: 1;
 }
 .right .top {
+    position: relative;
     z-index: 2; /* Au-dessus de l’autre image */
 }
 .underMainContent{
