@@ -287,7 +287,7 @@ header .right a:hover{
     width: 100%;
 }
 .mainContent .right .imageContainer{
-    height: 50%;
+    height: 52%;
     aspect-ratio: 1 / 1; 
     position: relative;
 }
@@ -710,7 +710,7 @@ nav {
     }animation
 }*/ 
 
-/* CSS du code mobile */
+/************************ CSS du code mobile ***************************/
 @media screen and (max-width: 800px){
     .compPopUp #imgR{
             margin-top:85% ;

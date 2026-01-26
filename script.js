@@ -100,14 +100,11 @@ async function setPersonalProjects() {
                 <p style="display:none;" id="d${id}">${data[i].texte}</p>
                 <p id="r${id}" class="ressource">${data[i].ressource}</p>
                 <div onclick="showCompetences('${id}')" class="buttonSeeMore">Voir plus</div>
-            </div>
-        `;
+            </div>`;
     }
 }
 
 function showCompetences(id) {
-    console.log("yoyo");
-    console.log(id);
     var bgBlur = document.getElementById('blurBg');
     var popUp = document.getElementById('popUp');
     var titlePopUp = document.getElementById('popUpTitle');
