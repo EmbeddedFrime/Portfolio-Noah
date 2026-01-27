@@ -11,8 +11,11 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
+
 </head>
-<script src="script.js"> </script>
+    
 <body>
     <div id="banner">
         📱 La version mobile est en cours de développement. Merci pour votre compréhension.
@@ -23,7 +26,7 @@
         <div class="compPopUp"> 
             <img id="imgR" src="assets/imgs/R201.png" alt="">
             <div class="right">
-                <div onclick="closePopUp()" class="closePopUp" style="display: flex;">✖</div>
+                <div id ="closePopUp" class="closePopUp" style="display: flex;">✖</div>
                 <h1 id="popUpTitle">test </h1>
                 <h2 id="RName">R201</h2>
                 <p id="description">portfolio de Mr noah perret</p>
@@ -101,19 +104,19 @@
             </h1>
             <!-- Conteneur PC -->
             <div class="tab-container">
-                  <button onclick="changeCompetences(this.id)" id="verifier" class="tab-button active">Concevoir</button>
-                  <button onclick="changeCompetences(this.id)" id="concevoir" class="tab-button">Vérifier</button>
-                  <button onclick="changeCompetences(this.id)" id="maintenir" class="tab-button">Maintenir</button>
-                  <button onclick="changeCompetences(this.id)" id="implanter" class="tab-button">Implanter</button>
+                  <button class="tab-button active" id="verifier">Concevoir</button>
+                  <button class="tab-button" id="concevoir">Vérifier</button>
+                  <button class="tab-button" id="maintenir">Maintenir</button>
+                  <button class="tab-button" id="implanter">Implanter</button>
             </div>
             <!-- Dropdown mobile -->
             <div class="tab-dropdown">
-            <select id="tab-select" onchange="changeCompetences(this.value)">
-                <option value="verifier">Concevoir</option>
-                <option value="concevoir">Vérifier</option>
-                <option value="maintenir">Maintenir</option>
-                <option value="implanter">Implanter</option>
-            </select>
+                <select id="tab-select">
+                    <option value="verifier">Concevoir</option>
+                    <option value="concevoir">Vérifier</option>
+                    <option value="maintenir">Maintenir</option>
+                    <option value="implanter">Implanter</option>
+                </select>
             </div>
         </div>
 

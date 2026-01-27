@@ -20,17 +20,10 @@ async function getJSONFile(file) {
     }
 }
 
-function closePopUp() {
-    var popUp = document.getElementById('popUp');
-    var bgBlur = document.getElementById('blurBg');
-    popUp.style.display = "none";
-    bgBlur.style.display = "none";
-
-    // Permettre à nouveau le défilement
-    document.body.style.overflow = 'auto';
-}
 
 function changeCompetences(choosenCompetence) {
+    
+
     updateCompetences(choosenCompetence);
     competenceStatus = choosenCompetence;
 
