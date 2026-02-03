@@ -48,6 +48,15 @@ function preloadImagesByCategory(choosenCompetence) {
         loadedCategories['pp'] = true;
     }
 
+    if (!loadedCategories['b']) { //Changer la valeur fixe 8 si on ajoute des projets
+        for (let i = 0; i < 8; i++) {
+            const img = new Image();
+            img.src = `assets/imgs/b${i}.webp`;
+            console.log(`Préchargement de : ${prefix}${i}.webp`); // Optionnel : 
+        }
+        loadedCategories['b'] = true;
+    }
+
     // 2. Chargement de la catégorie d'onglet (Si pas déjà fait)
     if (prefix && !loadedCategories[choosenCompetence]) {
         for (let i = 0; i < 9; i++) {
