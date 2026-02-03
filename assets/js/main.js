@@ -5,7 +5,7 @@
  */
 
 // On regroupe tous les imports de data.js sur une seule ligne
-import { updateCompetences, setPersonalProjects } from './data.js';
+import { setCompetence, setPersonalProjects, setBook } from './data.js';
 import { initUI } from './ui.js';
 import { initAnimation } from './animations.js';
 
@@ -24,8 +24,9 @@ async function init() {
     // Promise.all lance les deux fonctions en même temps (plus rapide)
     try {
         await Promise.all([
-            updateCompetences("verifier"),
-            setPersonalProjects()
+            setCompetence("verifier"),
+            setPersonalProjects(),
+            setBook()
         ]);
         console.log("Données chargées avec succès.");
     } catch (error) {

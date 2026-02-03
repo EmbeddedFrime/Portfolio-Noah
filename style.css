@@ -390,7 +390,15 @@ border-radius: 34px;
 border-radius: 50%;
 } 
 
-.headerCompetences{
+.headerCompetences {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headerBook {
     align-items: center;
     width: 100%;
     display: flex;
@@ -562,7 +570,7 @@ border-radius: 50%;
   gap: 0.5rem;
 }
 
-.tab-button {
+.tab-button,.tab-button2 {
   padding: 0.6rem 1.2rem;
   background-color: transparent;
   color: white;
@@ -577,13 +585,13 @@ border-radius: 50%;
   box-shadow: 0 0px 18px var(--secondColor);  /*halo bleue*/ 
 }
 
-.tab-button:hover {
+.tab-button:hover ,.tab-button2:hover {
   border-color: #064CFF;
   background-color: rgba(255, 255, 255, 0.05);
   outline: none;
 }
 
-.tab-button.active {
+.tab-button.active,.tab-button2.active {
   border-color: #064CFF;
   color: white;
 }

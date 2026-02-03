@@ -4,7 +4,7 @@
  * @author Noah PERRET & Noan LISSELOUR
  */
 
-import { updateCompetences} from "./data.js";
+import { setCompetence} from "./data.js";
 
 //Variables internes :
 let competenceStatus = "verifier";
@@ -39,7 +39,7 @@ function preloadImagesByCategory(choosenCompetence) {
     const prefix = types[choosenCompetence];
 
     // 1. Chargement des Projets Persos (Une seule fois au premier appel quel qu'il soit)
-    if (!loadedCategories['pp']) {
+    if (!loadedCategories['pp']) { //Changer la valeur fixe 8 si on ajoute des projets
         for (let i = 0; i < 8; i++) {
             const img = new Image();
             img.src = `assets/imgs/pp${i}.webp`;
@@ -133,10 +133,12 @@ function initChangeCompetence() {
     }
 
     // Initialisation
-    updateCompetences(competenceStatus);
+    setCompetence(competenceStatus);
 }
 /***************** Partie Action *******************/
 
+
+window.showCompetences = showCompetences;
 // On attache la fonction à l'objet window pour qu'elle soit accessible partout
 /**
  * Affiche la pop-up de détails d'une compétence ou d'un projet.
@@ -151,7 +153,7 @@ export function showCompetences(id) {
     const img = document.getElementById('imgR');
     let type = "";
     
-    if (!id.includes("pp")) {
+    if (!id.includes("pp") && !id.includes("b")) {
         switch (competenceStatus) {
             case "verifier":
                 type = "V";
@@ -199,7 +201,7 @@ export function showCompetences(id) {
  * @param {string} choosenCompetence - La catégorie choisie.
  */
 export function changeCompetences(choosenCompetence) {
-    updateCompetences(choosenCompetence);
+    setCompetence(choosenCompetence);
     competenceStatus = choosenCompetence;
 
     preloadImagesByCategory(choosenCompetence);
@@ -220,6 +222,8 @@ export function changeCompetences(choosenCompetence) {
 //Pour quelle soit appelé depuis le JSON
 window.afficherImageAgauche = afficherImageAgauche;
 
+
+//!! l'appeler toutes les 20 seconde pour faire une sorte de carrouselle ?
 export function afficherImageAgauche(imgLink) {
     var img = document.getElementById('imgR');
     img.src = "assets/imgs/more/" + imgLink + ".webp";

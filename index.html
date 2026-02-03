@@ -11,8 +11,8 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script src="js/main.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
 
 </head>
     
@@ -40,9 +40,9 @@
         </div>
         <div class="right">
             <a href="#">Accueil</a>
-            <a href="#competencesContainer">Book</a><span class="new-badge">Nouveau</span></a></a>
+            <a href="#headerBook">Book</a><span class="new-badge">Nouveau</span></a>
             <a href="https://game.noahperret.com" target="_blank" rel="noopener noreferrer">Game
-            <a href="#competencesContainer">Compétences</a>
+            <a href="#headerCompetences">Compétences</a>
             <a href="/assets/cv.pdf">CV</a>
             <a href="https://linktr.ee/noahperret" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
@@ -53,8 +53,9 @@
         <nav class="mobileMenu" id="mobileMenu">
             <ul>
                 <li><a href="#a">Accueil</a></li>
-                <li><a href="https://game.noahperret.com" target="_blank" rel="noopener noreferrer">Game<span class="new-badge">Nouveau</span></a></li>
-                <li><a href="#competencesContainer">Compétences</a></li>
+                <li><a href="#headerBook">Book<span class="new-badge">Nouveau</span></a></li>
+                <li><a href="https://game.noahperret.com" target="_blank" rel="noopener noreferrer">Game</a></li>
+                <li><a href="#headerCompetences">Compétences</a></li>
                 <li><a href="/assets/cv.pdf">CV</a></li>
                 <li><a href="https://linktr.ee/noahperret" target="_blank" rel="noopener noreferrer">Contact</a></li>
             </ul>
@@ -79,7 +80,7 @@
                     </div>
                 </div>
                 <div class="cta-buttons">
-                    <a href="#ProjetPersoHeader" class="btn btn-primary">📁 Voir mes projets</a>
+                    <a href="#headerProjetPerso" class="btn btn-primary">📁 Voir mes projets</a>
                     <a href="https://linktr.ee/noahperret" class="btn btn-outline" target="_blank" rel="noopener noreferrer" >✉️ Me contacter</a>
                     <!--<a href="./assets/cv.pdf" class="btn btn-cv" download>📄 Télécharger mon CV</a>!-->
                 </div>
@@ -119,7 +120,6 @@
                 </select>
             </div>
         </div>
-
         
         <div id="competencesContainer" class="competencesContainer">
             <div class="competencesCard">
@@ -132,10 +132,37 @@
             </div>
         </div>
 
-        <div id="ProjetPersoHeader" class="headerCompetences">
+
+        <div id="headerBook" class="headerBook">
+            <h1>Book d'apprentissage <span class="new-badge">Nouveau</span><div class="underline"></div></h1>
+            <!-- Conteneur PC -->
+            <div class="tab-container">
+                  <button class="tab-button2 active" id="S1">S1</button>
+            </div>
+            <!-- Dropdown mobile -->
+            <div class="tab-dropdown">
+                <select id="tab-select2">
+                    <option value="S1">S1</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="bookContainer" class="competencesContainer">
+            <div class="competencesCard">
+                <div class="iconContainer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V176h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H176V24zM160 128H352c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160V352H352V160z"/></svg>
+                </div>
+                <h2>Base de l'électronique</h2>
+                <p class="ressource">R201</p>
+                <div class="buttonSeeMore">Voir plus</div>
+            </div>
+        </div>
+        
+
+        <div id="headerProjetPerso" class="headerCompetences">
             <h1>Projets personnels<div class="underline"></div></h1>
         </div>
-        <div id="ProjetPersoContainer" class="competencesContainer">
+        <div id="projetPersoContainer" class="competencesContainer">
             <div class="competencesCard">
                 <div class="iconContainer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V176h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H176V24zM160 128H352c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160V352H352V160z"/></svg>
