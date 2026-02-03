@@ -235,6 +235,8 @@ header .right a:hover{
     align-items: center;
     justify-content: center;
     user-select: none;
+    /* pour safari*/
+    -webkit-user-select: none;
 }
 .mainContent .left h1{
     font-size: 5rem;
