@@ -141,8 +141,6 @@ function initChangeCompetence() {
         });
     }
 
-    // Initialisation
-    setCompetence(competenceStatus);
 }
 /***************** Partie Action *******************/
 

@@ -7,6 +7,7 @@
  */
 
 import { showCompetences } from './ui.js';
+import { sleep } from "./utils.js";
 
 /**
  * Charge un fichier JSON depuis le dossier assets/json.
@@ -93,7 +94,7 @@ async function fillCards({
             : `<div class="imgContainer"><img src="${data[i].img}"></div>`;
 
         //Charge le texte, la ressource  et le titre
-        mainDiv.innerHTML += `
+        let cardHTML = `
             <div class="competencesCard" data-type="${dataType}" data-id="${i}">
                 ${illustrationContainer}
                 <h2 id="h${id}">${data[i].nom}</h2>
@@ -101,9 +102,14 @@ async function fillCards({
                 <p id="r${id}" class="ressource">${data[i].ressource}</p>
                 <div class="buttonSeeMore">Voir plus</div>
             </div>`;
+
+        //On ajoute au html à chaque fois qu'une carte est chargé
+        mainDiv.insertAdjacentHTML("beforeend", cardHTML);
+        await sleep(50);
     }
     clickOnCard(); //Détecteur d'appuis sur la carte
 }
+
 /**
  * @brief Charge et affiche les projets personnels dans le conteneur HTML dédié.
  *

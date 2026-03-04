@@ -431,7 +431,12 @@ border-radius: 50%;
     box-shadow: 0 6px 18px var(--secondColor);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    animation: fadeIn 0.5s ease forwards; 
 }
+ @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
 .competencesCard:hover {
     transform: translateY(-10px) scale(1.02);
