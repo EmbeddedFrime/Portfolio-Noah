@@ -577,7 +577,7 @@ border-radius: 50%;
   gap: 0.5rem;
 }
 
-.tab-button,.tab-button2 {
+.tab-button, .tab-button-book {
   padding: 0.6rem 1.2rem;
   background-color: transparent;
   color: white;
@@ -592,23 +592,23 @@ border-radius: 50%;
   box-shadow: 0 0px 18px var(--secondColor);  /*halo bleue*/ 
 }
 
-.tab-button:hover ,.tab-button2:hover {
+.tab-button:hover, .tab-button-book:hover {
   border-color: #064CFF;
   background-color: rgba(255, 255, 255, 0.05);
   outline: none;
 }
 
-.tab-button.active,.tab-button2.active {
+.tab-button.active, .tab-button-book.active {
   border-color: #064CFF;
   color: white;
 }
 
 /* Masquer la dropdown par défaut */
-.tab-dropdown {
+.tab-dropdown, .tab-dropdown-book {
   display: none;
 }
 
-.tab-dropdown select {
+.tab-dropdown select, .tab-dropdown-book select {
     padding: 0.6rem 2.4rem 0.6rem 1.2rem; /* Plus de padding à droite que à gauche */
   border-radius: 12px;
   border: 2px solid var(--secondColor);
@@ -625,14 +625,14 @@ border-radius: 50%;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 0px 18px var(--secondColor);  /*halo bleue*/ 
 }
-.tab-dropdown select option {
+.tab-dropdown select option, .tab-dropdown-book select option {
    color: var(--secondColor);              /* texte foncé */
   background-color: #f1f5f9;   /* ne s'appliquera pas partout */
   font-weight: 500;
 }
 /* Hover/focus styling */
-.tab-dropdown select:hover,
-.tab-dropdown select:focus {
+.tab-dropdown select:hover, .tab-dropdown-book select:hover,
+.tab-dropdown select:focus, .tab-dropdown-book select:focus {
   border-color: #064CFF;
   background-color: rgba(255, 255, 255, 0.05);
   outline: none;
@@ -847,11 +847,11 @@ nav {
         margin-bottom: 10px;
     } 
 
-    .tab-container {
-    display: none;
+    .tab-container, .tab-container-book{
+        display: none;
     }
 
-    .tab-dropdown {
+    .tab-dropdown,  .tab-dropdown-book{
         display: block;
     }
 

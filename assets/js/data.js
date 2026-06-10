@@ -6,7 +6,7 @@
  *  !! To be upgrade : mettre des class 
  */
 
-import { showCompetences } from './ui.js';
+import { showCard } from './ui.js';
 import { sleep } from "./utils.js";
 
 /**
@@ -40,7 +40,7 @@ async function getJSONFile(file) {
  * Pour chaque carte (.competencesCard) :
  *  - Récupère l'ID et le type (pp, b, etc.) stockés dans les data-attributes.
  *  - Construit un identifiant final : type + l'ID 
- *  - Appelle la fonction showCompetences() avec cet identifiant.
+ *  - Appelle la fonction showCard() avec cet identifiant.
  */
 function clickOnCard() {
     const cards = document.querySelectorAll('.competencesCard');
@@ -48,15 +48,22 @@ function clickOnCard() {
         card.addEventListener('click', () => {
             const id = card.dataset.id;
             const type = card.dataset.type; // Récupère "pp" ou undefined
-
-            // Logique robuste : si un type existe (pp, b, etc.), on le préfixe.
-            // Sinon, on utilise uniquement l'ID.
-            const finalId = type ? type + id : id;
+ 
+            let finalId = id;
+            if (type === 'pp') {
+                finalId = 'pp' + id;
+            } else {
+                // On regarde si la carte cliquée est dans le book ou les compétences
+                const isBook = card.closest('#bookContainer');
+                finalId = isBook ? 'b' + id : 'c' + id; // Renvoie 'b0', 'b1' ou 'c0', 'c1'
+            }
             
-            showCompetences(finalId);
+            showCard(finalId);
         });
     });
 }
+
+
 
 /**
  * @brief Rmplie les cartes HTML à partir de fichier JSONC.
@@ -110,52 +117,62 @@ async function fillCards({
     clickOnCard(); //Détecteur d'appuis sur la carte
 }
 
-/**
- * @brief Charge et affiche les projets personnels dans le conteneur HTML dédié.
- *
- * @async
- */
-export async function setPersonalProjects(){
-    // Ajout des { } pour passer un objet
-    await fillCards({jsoncName: 'projetsPerso',
-        jsoncKey: 'projetsPerso', 
-        HTMLcontainerId: 'projetPersoContainer', 
-        idPrefix: 'pp', 
-        dataType: 'pp' 
-    });
-}
+
 
 /**
- * @brief Charge et affiche les carte book dans le conteneur HTML dédié.
- *
+ * @brief Charge et affiche de façon générique les cartes d'une section du portfolio.
  * @async
+ * @param {string} sectionType - Le type de section ('competence', 'book', ou 'projetsPerso').
+ * @param {string} [key] - La sous-clé optionnelle (ex: 'verifier', 'S5', 'S6').
  */
-export async function setBook(){
-    // Ajout des { } pour passer un objet
-    await fillCards({
-        jsoncName: 'book', 
-        jsoncKey: 'book', 
-        HTMLcontainerId: 'bookContainer', 
-        idPrefix: 'b', 
-        dataType: 'b' 
-    });
-}
+export async function setSection(sectionType, tabKey = '') {
+    let jName;
+    let jKey;
+    let containerId;
+    let prefix;
+    let type;
 
-/**
- * @brief Charge et affiche les compétences spécifiées dans le conteneur HTML dédié.
- *
- * @async
- * @param {string} competence Clé du tableau de compétences à charger.
- */
-export async function setCompetence(competence){
-    // Ajout des { } pour passer un objet
+    switch (sectionType) {
+        case 'competence':
+            jName = 'competences';
+            jKey = tabKey;
+            containerId = 'competencesContainer';
+            prefix = 'c'
+            type = '';
+        break;
+
+        case 'book':
+            jName = 'book';
+            jKey = tabKey;
+            containerId = 'bookContainer';
+            prefix = 'b'
+            type = '';    
+        break;
+
+        case 'projetPerso':
+            jName = 'projetsPerso';
+            jKey = 'projetsPerso';
+            containerId = 'projetPersoContainer';
+            prefix = 'pp'
+            type = 'pp';    
+        break;
+    
+        default:
+            console.error(`La section "${sectionType}" n'existe pas.`);
+            return;
+        break;
+    }
+
     await fillCards({
-        jsoncName: 'competences', 
-        jsoncKey: competence, 
-        HTMLcontainerId: 'competencesContainer', 
-        idPrefix: '', 
-        dataType: '' 
+        jsoncName: jName, 
+        jsoncKey: jKey, 
+        HTMLcontainerId: containerId, 
+        idPrefix: prefix, 
+        dataType: type 
     });
+  
+    // Appel à la fonction fillCards avec la bonne configuration
+    await fillCards(currentConfig);
 }
 
 
