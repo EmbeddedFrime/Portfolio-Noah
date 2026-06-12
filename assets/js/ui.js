@@ -4,10 +4,12 @@
  * @author Noah PERRET & Noan LISSELOUR
  */
 
-import { setCompetence} from "./data.js";
+import {setSection} from "./data.js";
 
 //Variables internes :
-let competenceStatus = "verifier";
+let currentCompetence = "verifier";
+let currentBook = "S6";
+
 
 /***************** Partie Ecoute *******************/
 
@@ -16,8 +18,9 @@ export function initUI() {
     initClosingPopup();
     initMobileBurger();
     initChangeCompetence();
+    initChangeSemester();
     //Précharge
-    preloadImagesByCategory(competenceStatus);
+    preloadImagesByCategory(currentCompetence);
 }
 
 
@@ -34,9 +37,9 @@ function initImageZoom() {
 // Variable à placer en haut de ton fichier ui.js
 const loadedCategories = {}; 
 
-function preloadImagesByCategory(choosenCompetence) {
+function preloadImagesByCategory(chosenCompetence) {
     const types = { verifier: "V", concevoir: "C", maintenir: "M", implanter: "I" };
-    const prefix = types[choosenCompetence];
+    const prefix = types[chosenCompetence];
 
     // 1. Chargement des Projets Persos (Une seule fois au premier appel quel qu'il soit)
     if (!loadedCategories['pp']) { //Changer la valeur fixe 8 si on ajoute des projets
@@ -48,24 +51,24 @@ function preloadImagesByCategory(choosenCompetence) {
         loadedCategories['pp'] = true;
     }
 
-    if (!loadedCategories['b']) { //Changer la valeur fixe 8 si on ajoute des projets
+    if (!loadedCategories['S5']) { //Changer la valeur fixe 8 si on ajoute des projets
         for (let i = 0; i < 8; i++) {
             const img = new Image();
-            img.src = `assets/imgs/b${i}.webp`;
+            img.src = `assets/imgs/S5${i}.webp`;
             console.log(`Préchargement de : ${prefix}${i}.webp`); // Optionnel : 
         }
         loadedCategories['b'] = true;
     }
 
     // 2. Chargement de la catégorie d'onglet (Si pas déjà fait)
-    if (prefix && !loadedCategories[choosenCompetence]) {
+    if (prefix && !loadedCategories[chosenCompetence]) {
         for (let i = 0; i < 9; i++) {
             const img = new Image();
             img.src = `assets/imgs/${prefix}${i}.webp`;
             console.log(`Préchargement de : ${prefix}${i}.webp`); // Optionnel : 
 
         }
-        loadedCategories[choosenCompetence] = true;
+        loadedCategories[chosenCompetence] = true;
     }
 }
 
@@ -131,59 +134,83 @@ function initChangeCompetence() {
 
     // Écouteur pour les boutons (Desktop)
     buttons.forEach(btn => {
-        btn.addEventListener('click', e => changeCompetences(e.currentTarget.id));
+        btn.addEventListener('click', e => changeCard("competence", e.currentTarget.id));
     });
 
     // Écouteur pour le menu déroulant (Mobile)
     if (select) {
         select.addEventListener('change', e => {
-            changeCompetences(e.target.value);
+            changeCard("competence", e.target.value);
         });
     }
+}
 
+
+function initChangeSemester() {
+    const select = document.getElementById('tab-select-book');
+    const buttons = document.querySelectorAll('.tab-button-book');
+
+    // Écouteur pour les boutons (Desktop)
+    buttons.forEach(btn => {
+        btn.addEventListener('click', e => changeCard("book", e.currentTarget.id));
+    });
+
+    // Écouteur pour le menu déroulant (Mobile)
+    if (select) {
+        select.addEventListener('change', e => {
+            changeCard("book", e.target.value);
+        });
+    }
 }
 /***************** Partie Action *******************/
 
 
-window.showCompetences = showCompetences;
+window.showCard = showCard;
 // On attache la fonction à l'objet window pour qu'elle soit accessible partout
 /**
  * Affiche la pop-up de détails d'une compétence ou d'un projet.
  * @param {string} id - L'identifiant technique de l'élément.
  */
-export function showCompetences(id) {
+export function showCard(id) {
     const bgBlur = document.getElementById('blurBg');
     const popUp = document.getElementById('popUp');
     const titlePopUp = document.getElementById('popUpTitle');
     const ressName = document.getElementById('RName');
     const texte = document.getElementById('description');
     const img = document.getElementById('imgR');
-    let type = "";
-    
-    if (!id.includes("pp") && !id.includes("b")) {
-        switch (competenceStatus) {
-            case "verifier":
-                type = "V";
-                break;
-            case "concevoir":
-                type = "C";
-                break;
-            case "maintenir":
-                type = "M";
-                break;
-            case "implanter":
-                type = "I"; 
-                break;
-        }
-    }
 
+    let imgSrc = "";
+
+    //Si c'est un projet personelle il n'y a pas de catégorie
+    if (id.includes("pp")) {
+        imgSrc = `assets/imgs/${id}.webp`; // ex: assets/imgs/pp0.webp
+    } 
+    // On vérifie si l'élément HTML cliqué provient du conteneur du Book
+    else if (id.startsWith("b")) {
+        const numId = id.replace("b", ""); // Extrait le numéro (ex: "b0" -> "0")
+        // On récupère le semestre actif depuis notre objet d'état (ex: "S5" ou "S6")
+        imgSrc = `assets/imgs/${currentBook}${numId}.webp`;
+    } 
+    // 3. Gestion des Compétences (par défaut)
+    else if (id.startsWith("c")){
+        const numId = id.replace("c", ""); // Extrait le numéro
+        let type = "";
+        switch (currentCompetence) {
+            case "verifier":  type = "V"; break;
+            case "concevoir": type = "C"; break;
+            case "maintenir": type = "M"; break;
+            case "implanter": type = "I"; break;
+        }
+        imgSrc = `assets/imgs/${type}${numId}.webp`; // ex: assets/imgs/V0.webp
+    }
+    
     //Demander à noan si il a un beau chargement :
 
     // On cache l'image ou on met une opacité basse pendant le chargement
     img.style.opacity = "0"; 
 
     // On définit la nouvelle source
-    img.src = "assets/imgs/" + type + id + ".webp";
+    img.src = imgSrc
 
     // Dès que l'image est chargée par le navigateur, on la réaffiche avec une transition
     img.onload = () => {
@@ -203,26 +230,55 @@ export function showCompetences(id) {
 }
 
 
+
 /**
  * Gère le changement d'onglet des compétences.
- * @param {string} choosenCompetence - La catégorie choisie.
+ * 
+ * @param {string} sectionType - Le type de section ('competence', 'book', ou 'projetsPerso').
+ * @param {*} chosenTab La catégorie choisie.
+ * @returns 
  */
-export function changeCompetences(choosenCompetence) {
-    setCompetence(choosenCompetence);
-    competenceStatus = choosenCompetence;
+export function changeCard(sectionType, chosenTab) {
+    let containerSelector;
+    let buttonClass;
 
-    preloadImagesByCategory(choosenCompetence);
+    switch (sectionType) {
+        case 'competence':
+            if (chosenTab == currentCompetence ) return;  // optimisation on ne recharge pas une compétence déjà chargé
+            containerSelector = ".tab-container";
+            buttonClass = "tab-button";
+
+            currentCompetence = chosenTab; // set current value
+        break;
+
+        case 'book':
+            if (chosenTab == currentBook ) return;  // optimisation on ne recharge pas une compétence déjà chargé
+            containerSelector = ".tab-container-book";
+            buttonClass = "tab-button-book";
+
+            currentBook = chosenTab; // set current value 
+        break;
+    
+        default:
+            console.error(`La section "${sectionType}" n'existe pas.`);
+            return;
+        break;
+    }
+
+    setSection(sectionType, chosenTab);
+
+    //preloadImagesByCategory(chosenTab);
 
     //clear all CSS
-    var allButtons = document.querySelector(".tab-container")
+    var allButtons = document.querySelector(containerSelector)
     console.log(allButtons.children[0])
     Array.from(allButtons.children).forEach(button => {
-        button.className="tab-button"
+        button.className=buttonClass
         console.log(button.style)
     });
 
     //set current
-    document.getElementById(choosenCompetence).classList.add("active")
+    document.getElementById(chosenTab).classList.add("active")
 }
 
 
